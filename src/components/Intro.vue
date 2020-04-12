@@ -2,7 +2,7 @@
     <div class="section is-hero hero-hosting overflow-hidden position-relative zindex99">
         <div class="container position-relative">
             <div class="col lg-5 md-12">
-                <h1>CashShuffle On Your Mobile</h1>
+                <h1>Nito Personal Exchange Server</h1>
 
                 <div class="margin-bottom is-heading-color">
                     The easiest way to shuffle your coins when on-the-go.
