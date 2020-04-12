@@ -1,0 +1,28 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2019 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello" horiz-adv-x="1000" >
+<font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="arrow-left" unicode="&#xe800;" d="M18 394c-24-24-24-64 0-88l398-398c25-24 64-24 88 0 25 24 25 64 0 88l-353 354 353 354c25 24 25 64 0 88-24 24-63 24-88 0l-398-398z m1545 19l-1500 0 0-125 1500 0 0 125z" horiz-adv-x="1563" />
+
+<glyph glyph-name="arrow-right" unicode="&#xe801;" d="M1544 306c25 24 25 64 0 88l-398 398c-24 24-63 24-88 0-24-24-24-64 0-88l354-354-354-354c-24-24-24-64 0-88 25-24 64-24 88 0l398 398z m-1544-18l1500 0 0 125-1500 0 0-125z" horiz-adv-x="1563" />
+
+<glyph glyph-name="button-arrow-left" unicode="&#xe802;" d="M500 850c-276 0-500-224-500-500 0-276 224-500 500-500 276 0 500 224 500 500 0 276-224 500-500 500z m-159-509l80-79c5-5 13-5 17 0 5 5 5 12 0 17l-58 59 270 0 0 25-270 0 58 58c5 5 5 13 0 17-4 5-12 5-17 0l-80-79c-5-5-5-13 0-18z" horiz-adv-x="1000" />
+
+<glyph glyph-name="button-arrow-right" unicode="&#xe803;" d="M500-150c276 0 500 224 500 500 0 276-224 500-500 500-276 0-500-224-500-500 0-276 224-500 500-500z m159 509l-80 79c-5 5-12 5-17 0-5-4-5-12 0-17l58-58h-270v-25h270l-58-59c-5-5-5-12 0-17 5-5 12-5 17 0l80 79c5 5 5 13 0 18z" horiz-adv-x="1000" />
+
+<glyph glyph-name="check" unicode="&#xe804;" d="M500-150c276 0 500 224 500 500 0 276-224 500-500 500-276 0-500-224-500-500 0-276 224-500 500-500z m268 601l-330-330-3 4-3-4-193 193 59 59 137-137 274 274 59-59z" horiz-adv-x="1000" />
+
+<glyph glyph-name="menu-double-black" unicode="&#xe805;" d="M0 650h2400v200h-2400v-200z m0-800h2400v200h-2400v-200z" horiz-adv-x="2400" />
+
+<glyph glyph-name="play" unicode="&#xe807;" d="M500-150c276 0 500 224 500 500 0 276-224 500-500 500-276 0-500-224-500-500 0-276 224-500 500-500z m-107 314l321 186-321 186 0-372z" horiz-adv-x="1000" />
+
+<glyph glyph-name="plus" unicode="&#xe808;" d="M533 850h-66v-467h-467v-66h467v-467h66v467h467v66h-467v467z" horiz-adv-x="1000" />
+
+<glyph glyph-name="menu-triple-black" unicode="&#xe809;" d="M1500 725h-1500v125h1500v-125z m0-437h-1500v125h1500v-125z m0-438h-1500v125h1500v-125z" horiz-adv-x="1500" />
+</font>
+</defs>
+</svg>
