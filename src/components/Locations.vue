@@ -2,10 +2,10 @@
     <div id="location" class="section no-padding-top">
         <div class="container">
             <div class="col block-centered text-align-center lg-6 md-12">
-                <h2>Nito Exchange Locations</h2>
+                <h2>Nito Cloud Locations</h2>
 
                 <div class="text-medium low-text-contrast margin-bottom">
-                    The global reach and the local presence you need
+                    We offer global reach, with the local presence you need.
                 </div>
             </div>
         </div>

@@ -3,10 +3,10 @@
         <div class="container flexh-align-center margin-bottom-double">
             <div class="col lg-5 alignself-center md-12">
                 <div class="pre-title">
-                    Solutions For Every Business
+                    Privacy Solutions For All
                 </div>
 
-                <h2 class="margin-bottom-double">Infrastructure for any vertical businessess</h2>
+                <h2 class="margin-bottom-double">Privacy Solutions to Benefit the Community</h2>
 
                 <ul class="c-checklist">
                     <li class="c-checklist_item margin-bottom">
@@ -46,10 +46,10 @@
 
             <div class="col lg-5 alignself-center md-12">
                 <div class="pre-title">
-                    Intuitive dashboard and interface
+                    Versitility to Suit Any Needs
                 </div>
 
-                <h2>Powerful Control Panel </h2>
+                <h2>Choose Which Option Best Suits Your Needs</h2>
 
                 <div class="margin-bottom-double">
                     Dedicated CPU instances run on their own CPU cores in the Superly infrastructure.

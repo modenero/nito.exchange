@@ -2,14 +2,14 @@
     <div class="section is-hero hero-hosting overflow-hidden position-relative zindex99">
         <div class="container position-relative">
             <div class="col lg-5 md-12">
-                <h1>Nito Personal Exchange Server</h1>
+                <h1>Nito Exchange Desktop Gateway</h1>
 
                 <div class="margin-bottom is-heading-color">
-                    The easiest way to shuffle your coins when on-the-go.
+                    Simply the fastest, safest way to <strong>Shuffle and Fuse Cash</strong> when you're on-the-go.
                 </div>
 
                 <div class="margin-bottom is-heading-color">
-                    Connecting to Nito Cloud is <strong>100% FREE;</strong> or choose to run your own Nito Exchange, for the utmost in <strong>privacy and security</strong> of your wallet transactions.
+                    Run a private Nito Exchange right from your own desktop, and enjoy maximum <strong>privacy &amp; security</strong> for ALL your mobile Bitcoin Cash (BCH) transactions.
                 </div>
 
                 <a href="javascript://" class="button-primary animated w-inline-block">

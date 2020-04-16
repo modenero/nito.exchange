@@ -24,10 +24,10 @@
                     </div>
 
                     <div>
-                        <h4>Cloud Access</h4>
+                        <h4>An Unstoppable Cloud</h4>
 
                         <div class="margin-bottom">
-                            Leveraging the IPFS Orbit DB ensures 100% uptime to our exchange services.
+                            A federated network of IPFS Orbit DBs ensures 100% uptime for our exchange services.
                         </div>
                     </div>
                 </div>
@@ -38,10 +38,10 @@
                     <div class="margin-bottom"><img src="images/host-icon-5.svg" width="75" alt=""></div>
 
                     <div>
-                        <h4>Redundant Storage</h4>
+                        <h4>100% Transparency</h4>
 
                         <div class="margin-bottom">
-                            We run a cluster of over 30+ redundant disks to ensure that your coins are always secured.
+                            Public key cryptography assures that ALL messages are authenticated and immutable.
                         </div>
                     </div>
                 </div>
@@ -54,10 +54,10 @@
                     </div>
 
                     <div>
-                        <h4>Local Hosting</h4>
+                        <h4>Self-hosted Exchange</h4>
 
                         <div class="margin-bottom">
-                            Run your own Nito Exchange from a private VPS or even from your home computer.
+                            Run Nito Exchange on a private VPS, or even from a personal/home computer.
                         </div>
                     </div>
                 </div>
