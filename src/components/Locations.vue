@@ -1,5 +1,5 @@
 <template>
-    <div id="location" class="section no-padding-top">
+    <div id="location" class="section">
         <div class="container">
             <div class="col block-centered text-align-center lg-6 md-12">
                 <h2>Nito Cloud Locations</h2>

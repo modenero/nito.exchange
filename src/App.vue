@@ -3,15 +3,15 @@
         <Header />
         <Intro />
         <Highlights />
-        <Locations />
         <Benefits />
         <Architecture />
         <Cloud />
+        <Locations />
         <Services />
-        <Sponsors />
+        <GetStarted />
         <Articles />
         <Support />
-        <GetStarted />
+        <Sponsors />
         <Footer />
     </main>
 </template>

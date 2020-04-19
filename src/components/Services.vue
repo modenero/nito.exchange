@@ -1,5 +1,5 @@
 <template>
-    <div id="pricing" class="section">
+    <div id="pricing" class="section no-padding-top">
         <div class="container">
             <div class="col block-centered text-align-center lg-6 md-12">
                 <h2>Nito Exchange Services</h2>
