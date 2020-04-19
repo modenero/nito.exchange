@@ -6,12 +6,11 @@
             <div class="col lg-1 no-margin-bottom"></div>
 
             <div class="col lg-5 alignself-center md-12">
-                <!-- <h2>Nito Cloud introduces a best-in-class anonymity service for Bitcoin Cash</h2> -->
-                <h2>Nito Cloud introduces anonymity-as-a-service for Bitcoin Cash</h2>
+                <h2>Nito Cloud Introduces Anonymity-as-a-Service for Bitcoin Cash</h2>
 
                 <div class="margin-bottom-double">
-                    We mixed the best of <a href="https://cashshuffle.com/" target="blank"><strong>CashShuffle</strong></a> and <a href="https://github.com/cashshuffle/spec/blob/master/CASHFUSION.md" target="_blank"><strong>CashFusion</strong></a>
-                    into Nito Cloud, to offer on-the-go users a <strong>premium privacy experience.</strong>
+                    We blended the best of <a href="https://cashshuffle.com/" target="blank"><strong>CashShuffle</strong></a> and <a href="https://github.com/cashshuffle/spec/blob/master/CASHFUSION.md" target="_blank"><strong>CashFusion</strong></a>
+                    into Nito Cloud, to ensure on-the-go users a <strong>premium privacy experience.</strong>
                     You won't have to lift a finger, <a href="https://nito.cash" target="_blank"><strong>Nito Cash app</strong></a> includes everything you need to get started today!
                 </div>
 
