@@ -2,10 +2,10 @@
     <div id="pricing" class="section">
         <div class="container">
             <div class="col block-centered text-align-center lg-6 md-12">
-                <h2>Service Options</h2>
+                <h2>Nito Exchange Services</h2>
 
                 <div class="text-medium low-text-contrast margin-bottom">
-                    Choose your preferred service option.
+                    Choose the option(s) that best satisfies your needs
                 </div>
             </div>
         </div>
@@ -17,14 +17,14 @@
                         <div class="c-pricing__top">
                             <div class="flexh-space-between">
                                 <div class="size-h4 margin-bottom">
-                                    Self-hosted Solution
+                                    CashShuffle | CashFusion
                                 </div>
 
-                                <img src="images/host-icon-5.svg" width="64" alt="" class="alignself-top">
+                                <img src="images/host-icon-3.svg" width="64" alt="" class="alignself-top">
                             </div>
 
                             <div class="c-pricing-price2">
-                                FREE
+                                FREE <span class="pricing-fees">(plus mining fees)</span>
                             </div>
 
                             <div class="container container-nested">
@@ -34,7 +34,7 @@
                             </div>
 
                             <div class="text-small is-bold margin-bottom-quad">
-                                for commercial / non-commercial use
+                                for commercial &amp; non-commercial use
                             </div>
 
                             <div class="w-form">
@@ -51,18 +51,19 @@
                         </div>
 
                         <div class="text-small text-align-center">
-                            <a href="javascript://">Terms of service</a>
+                            <a href="javascript://">Application details</a>
                         </div>
                     </div>
                 </div>
 
                 <ul class="c-checklist padding-left">
-                    <li class="c-checklist_item"><strong>Unlimited</strong> Shuffles</li>
-                    <li class="c-checklist_item"><strong>Unlimited</strong> Fusions</li>
-                    <li class="c-checklist_item"><strong>Requires</strong> TOR</li>
-                    <li class="c-checklist_item"><strong>1TB</strong> Bandwidth</li>
-                    <li class="c-checklist_item">Unlimited App’s</li>
-                    <li class="c-checklist_item">24×7 Support</li>
+                    <li class="c-checklist_item"><strong>Unlimited</strong> CashShuffles</li>
+                    <li class="c-checklist_item"><strong>Unlimited</strong> CashFusions</li>
+                    <li class="c-checklist_item"><strong>0.0001 BCH</strong> minimum tx size</li>
+                    <li class="c-checklist_item"><strong>100+ BCH</strong> maximum tx size</li>
+                    <li class="c-checklist_item"><strong>Requires</strong> TOR gateway</li>
+                    <li class="c-checklist_item"><strong>Recommends</strong> VPN service</li>
+                    <li class="c-checklist_item"><strong>Email</strong> support ONLY</li>
                 </ul>
             </div>
 
@@ -72,14 +73,14 @@
                         <div class="c-pricing__top">
                             <div class="flexh-space-between">
                                 <div class="size-h4 margin-bottom">
-                                    CashShuffle Cloud
+                                    Nito Cloud for Coins
                                 </div>
 
                                 <img src="images/host-icon-4.svg" width="64" alt="" class="alignself-top">
                             </div>
 
                             <div class="c-pricing-price2">
-                                1.0%
+                                1.0% <span class="pricing-fees">(plus mining fees)</span>
                             </div>
 
                             <div class="container container-nested">
@@ -89,7 +90,7 @@
                             </div>
 
                             <div class="text-small is-bold margin-bottom-quad">
-                                of the transaction amount
+                                of the coin amount
                             </div>
 
                             <div class="w-form">
@@ -105,19 +106,20 @@
                             </div>
                         </div>
                         <div class="text-small text-align-center">
-                            <a href="javascript://">Terms of service</a>
+                            <a href="javascript://">Service details</a>
                         </div>
                     </div>
                 </div>
 
                 <ul class="c-checklist padding-left">
-                    <li class="c-checklist_item"><strong>up to 7</strong> Shuffles</li>
-                    <li class="c-checklist_item"><strong>8 Core</strong> Processor</li>
-                    <li class="c-checklist_item"><strong>512GB</strong> SSD Storage</li>
-                    <li class="c-checklist_item"><strong>100TB</strong> Bandwidth</li>
-                    <li class="c-checklist_item">Unlimited App’s</li>
-                    <li class="c-checklist_item">24×7 Phone Support</li>
-                    <li class="c-checklist_item">Free SSL Certificates</li>
+                    <li class="c-checklist_item"><strong>AI optimized</strong> shuffles &amp; fusions</li>
+                    <li class="c-checklist_item"><strong>Up to 7</strong> shuffles | fusions per coin</li>
+                    <li class="c-checklist_item"><strong>0.001 BCH</strong> minimum coin size</li>
+                    <li class="c-checklist_item"><strong>10 BCH</strong> maximum coin size</li>
+                    <li class="c-checklist_item"><strong>100% non-custodial</strong> coin control</li>
+                    <li class="c-checklist_item"><strong>Guaranteed</strong> fastest delivery</li>
+                    <li class="c-checklist_item"><strong>5% or more</strong> in fee rebates</li>
+                    <li class="c-checklist_item"><strong>Real-time</strong> support channels</li>
                 </ul>
             </div>
 
@@ -127,14 +129,14 @@
                         <div class="c-pricing__top">
                             <div class="flexh-space-between">
                                 <div class="size-h4 margin-bottom">
-                                    CashFusion Cloud
+                                    Nito Cloud for Tokens
                                 </div>
 
-                                <img src="images/host-icon-3.svg" width="64" alt="" class="alignself-top">
+                                <img src="images/host-icon-4.svg" width="64" alt="" class="alignself-top">
                             </div>
 
                             <div class="c-pricing-price2">
-                                1.0%
+                                1.0% <span class="pricing-fees">(plus mining fees)</span>
                             </div>
 
                             <div class="container container-nested">
@@ -144,7 +146,7 @@
                             </div>
 
                             <div class="text-small is-bold margin-bottom-quad">
-                                of the transaction amount
+                                of the token amount
                             </div>
 
                             <div class="w-form">
@@ -161,20 +163,20 @@
                         </div>
 
                         <div class="text-small text-align-center">
-                            <a href="javascript://">Terms of service</a>
+                            <a href="javascript://">Service details</a>
                         </div>
                     </div>
                 </div>
 
                 <ul class="c-checklist padding-left">
-                    <li class="c-checklist_item"><strong>up to 3</strong> Fusions</li>
-                    <li class="c-checklist_item"><strong>32 Core</strong> Processor</li>
-                    <li class="c-checklist_item"><strong>10TB</strong> SSD Storage</li>
-                    <li class="c-checklist_item"><strong>1000TB</strong> Bandwidth</li>
-                    <li class="c-checklist_item">Unlimited App’s</li>
-                    <li class="c-checklist_item">24×7 Phone Support</li>
-                    <li class="c-checklist_item">Free SSL Certificates</li>
-                    <li class="c-checklist_item">Free Cpanel</li>
+                    <li class="c-checklist_item"><strong>AI optimized</strong> shuffles &amp; fusions</li>
+                    <li class="c-checklist_item"><strong>Up to 7</strong> shuffles | fusions per token</li>
+                    <li class="c-checklist_item"><strong>1 USD</strong> minimum token value</li>
+                    <li class="c-checklist_item"><strong>10,000 USD</strong> maximum token value</li>
+                    <li class="c-checklist_item"><strong>100% non-custodial</strong> token control</li>
+                    <li class="c-checklist_item"><strong>Guaranteed</strong> fastest delivery</li>
+                    <li class="c-checklist_item"><strong>5% or more</strong> in fee rebates</li>
+                    <li class="c-checklist_item"><strong>Real-time</strong> support channels</li>
                 </ul>
             </div>
         </div>
@@ -190,5 +192,9 @@ export default {
 </script>
 
 <style scoped>
-/*  */
+.pricing-fees {
+    font-size: 0.3em;
+    color: rgba(150, 150, 150, 0.5);
+    /* font-style: italic; */
+}
 </style>

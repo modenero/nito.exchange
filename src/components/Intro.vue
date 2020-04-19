@@ -5,7 +5,7 @@
                 <h1>Nito Exchange Desktop Gateway</h1>
 
                 <div class="margin-bottom is-heading-color">
-                    Simply the fastest, safest way to <strong>Shuffle and Fuse Cash</strong> when you're on-the-go.
+                    Simply the fastest, safest way to <strong>Shuffle and Fuse Cash</strong> while you're on-the-go.
                 </div>
 
                 <div class="margin-bottom is-heading-color">
