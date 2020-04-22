@@ -10,6 +10,10 @@ Due to the nature of the CashShuffle and CashFusion "blame" specifications; it w
 
 Instead, our approach will be to create a pay-to-play scheme, whereby participants (players) will spend a nominal fee (eg. 1,000 satoshis) to participate in a single round of shuffling/fusing.
 
+### Current Anonymity Protocols
+
+I am especially fond of the cleverness in the specification for __[CashShuffle](https://github.com/cashshuffle/spec/blob/master/SPECIFICATION.md)__, however __NOT__ so much with __[CashFusion.](https://github.com/cashshuffle/spec/blob/master/CASHFUSION.md)__
+
 ### Non-custodial
 
 In an effort to remain compliant with AML/KYC policies; Nito Exchange will remain 100% non-custodial. In order to achieve this, participants will remain in complete control of their private keys throughout the shuffle/fusion process.

@@ -11,7 +11,9 @@
 * [1. Specifications]()
 
     * [1.1. Introduction](specs/intro.md)
-    * [1.2. Pools](specs/pools.md)
+    * [1.2. CashShuffle](specs/cashshuffle.md)
+    * [1.3. CashFusion](specs/cashfusion.md)
+    * [1.4. Pools](specs/pools.md)
 
 * [2. Nito Cloud Exchange]()
 
