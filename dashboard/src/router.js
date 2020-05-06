@@ -13,18 +13,18 @@ export default new Router({
       children: [
         // Dashboard
         {
-          name: 'Dashboard',
+          name: 'Overview',
           path: '',
           component: () => import('@/views/dashboard/Dashboard'),
         },
         // Pages
         {
-          name: 'User Profile',
+          name: 'Coin Manager',
           path: 'pages/user',
           component: () => import('@/views/dashboard/pages/UserProfile'),
         },
         {
-          name: 'Notifications',
+          name: 'Activity Monitor',
           path: 'components/notifications',
           component: () => import('@/views/dashboard/component/Notifications'),
         },
@@ -34,25 +34,19 @@ export default new Router({
           component: () => import('@/views/dashboard/component/Icons'),
         },
         {
-          name: 'Typography',
-          path: 'components/typography',
-          component: () => import('@/views/dashboard/component/Typography'),
+          name: 'Component View',
+          path: 'component',
+          component: () => import('@/views/dashboard/component/Tabs'),
         },
         // Tables
         {
-          name: 'Regular Tables',
+          name: 'Transactions',
           path: 'tables/regular-tables',
           component: () => import('@/views/dashboard/tables/RegularTables'),
         },
-        // Maps
-        {
-          name: 'Google Maps',
-          path: 'maps/google-maps',
-          component: () => import('@/views/dashboard/maps/GoogleMaps'),
-        },
         // Upgrade
         {
-          name: 'Upgrade',
+          name: 'Need Help?',
           path: 'upgrade',
           component: () => import('@/views/dashboard/Upgrade'),
         },

@@ -110,9 +110,9 @@
       class="ml-2"
       min-width="0"
       text
-      to="/pages/user"
+      to="/upgrade"
     >
-      <v-icon>mdi-account</v-icon>
+      <v-icon>mdi-help-circle</v-icon>
     </v-btn>
   </v-app-bar>
 </template>
