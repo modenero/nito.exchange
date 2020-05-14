@@ -69,7 +69,7 @@
                 :item="{
                     title: $t('causes-cash'),
                     icon: '',
-                    to: '/upgrade',
+                    to: '/donate',
                 }"
             />
         </template>

@@ -50,6 +50,12 @@ export default new Router({
                     path: 'upgrade',
                     component: () => import('@/views/Upgrade'),
                 },
+                // Donate
+                {
+                    name: 'Donation',
+                    path: 'donate',
+                    component: () => import('@/views/Donate'),
+                },
                 // Warrant Canary
                 {
                     name: 'Warrant Canary',
