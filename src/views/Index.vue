@@ -1,22 +1,19 @@
 <template>
     <v-app>
-        <dashboard-app-bar />
-
-        <dashboard-drawer />
-
-        <dashboard-view />
-
-        <dashboard-settings />
+        <app-bar />
+        <app-drawer />
+        <app-view />
+        <app-settings />
     </v-app>
 </template>
 
 <script>
 export default {
     components: {
-        DashboardAppBar: () => import('./dashboard/AppBar'),
-        DashboardDrawer: () => import('./dashboard/Drawer'),
-        DashboardSettings: () => import('./dashboard/Settings'),
-        DashboardView: () => import('./dashboard/View'),
+        AppBar: () => import('./components/AppBar'),
+        AppDrawer: () => import('./components/AppDrawer'),
+        AppSettings: () => import('./components/AppSettings'),
+        AppView: () => import('./components/AppView'),
     },
 
     data: () => ({
