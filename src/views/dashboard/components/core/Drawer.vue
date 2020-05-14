@@ -95,7 +95,7 @@ export default {
     data: () => ({
         items: [
             {
-                title: 'overview',
+                title: 'dashboard',
                 icon: 'mdi-view-dashboard',
                 to: '/',
             },

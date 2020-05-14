@@ -1,56 +1,9 @@
 <template>
-    <main>
-        <Header />
-        <Intro />
-        <Highlights />
-        <Benefits />
-        <Architecture />
-        <Cloud />
-        <Locations />
-        <Services />
-        <GetStarted />
-        <Articles />
-        <Support />
-        <Sponsors />
-        <Footer />
-    </main>
+    <router-view />
 </template>
 
 <script>
-/* Import components. */
-import Architecture from '@/components/Architecture.vue'
-import Articles from '@/components/Articles.vue'
-import Benefits from '@/components/Benefits.vue'
-import Cloud from '@/components/Cloud.vue'
-import Footer from '@/components/Footer.vue'
-import GetStarted from '@/components/GetStarted.vue'
-import Header from '@/components/Header.vue'
-import Highlights from '@/components/Highlights.vue'
-import Intro from '@/components/Intro.vue'
-import Locations from '@/components/Locations.vue'
-import Services from '@/components/Services.vue'
-import Sponsors from '@/components/Sponsors.vue'
-import Support from '@/components/Support.vue'
-
 export default {
-    components: {
-        Architecture,
-        Articles,
-        Benefits,
-        Cloud,
-        Footer,
-        GetStarted,
-        Header,
-        Highlights,
-        Intro,
-        Locations,
-        Services,
-        Sponsors,
-        Support,
-    }
+    // 
 }
 </script>
-
-<style>
-/*  */
-</style>
