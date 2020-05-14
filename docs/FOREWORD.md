@@ -22,6 +22,8 @@ In order to avoid our cloud servers from being banned from CashShuffle and CashF
 
 ### IMPORTANT NOTICE
 
+> According to a report by blockchain analysis firm Chainalysis, a mere 10% of funds sent to mixers come from criminal activities, while the rest were mixed for personal privacy reasons.
+
 Nito Cash Exchange is NOT a laundering service. Unlike dark market mixing services, ALL of our transaction are visible on-chain; meaning that law enforcement services such as Chainalysis and Amberdata WILL be able to ascertain, with a high probability, the source of coins in question.
 
 __DO NOT USE THIS SERVICE FOR ILLEGAL ACTIVITY, AS IT IS NOT SAFE__
