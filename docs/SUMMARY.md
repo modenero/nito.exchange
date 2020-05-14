@@ -15,7 +15,7 @@
     * [1.3. CashFusion](specs/cashfusion.md)
     * [1.4. Pools](specs/pools.md)
 
-* [2. Nito Cloud Exchange]()
+* [2. Nito Cloud]()
 
     * [2.1. Introduction](cloud/intro.md)
     * [2.2. Fees](cloud/fees.md)
