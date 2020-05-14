@@ -120,11 +120,6 @@ export default {
                 icon: 'mdi-format-list-text',
                 to: '/history',
             },
-            {
-                title: 'blank',
-                icon: 'mdi-format-font',
-                to: '/blank',
-            },
         ],
     }),
 

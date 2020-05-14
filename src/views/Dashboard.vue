@@ -1,5 +1,23 @@
 <template>
     <v-container id="dashboard" fluid tag="section">
+
+        <base-material-alert
+            color="info"
+            dark
+            dismissible
+            icon="mdi-information"
+        >
+            <p>
+                Nito Exchange is currently in <strong>Alpha</strong> stage.
+                We appreciate your support in getting us to <strong>Beta</strong> stage in the next few weeks.
+                <br />
+                <a href="https://causes.cash/@BCHPlease/nito-exchange-443db3869688" target="_blank">
+                    Click here to learn how YOUR support <strong>Causes Cash</strong> for our team
+                </a>
+                <v-icon>mdi-open-in-new</v-icon>
+            </p>
+        </base-material-alert>
+
         <dashboard-charts />
 
         <v-row>
@@ -290,3 +308,21 @@ export default {
     },
 }
 </script>
+
+
+<style lang="sass">
+.v-alert--material
+    p
+        font-weight: 600 !important
+        margin: 0
+    a
+        color: white !important
+        text-decoration: none
+    a:hover
+        text-decoration: underline
+    strong
+        font-size: 1.1em
+
+// a
+//     color: blue !important
+</style>

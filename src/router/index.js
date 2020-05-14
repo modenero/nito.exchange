@@ -72,7 +72,7 @@ export default new Router({
 
                 /* Blank Template */
                 {
-                    name: 'Blank',
+                    name: 'Blank Template',
                     path: 'blank',
                     component: () => import('@/views/Blank'),
                 },

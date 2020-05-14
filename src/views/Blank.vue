@@ -185,3 +185,9 @@ export default {
     },
 }
 </script>
+
+<style lang="sass">
+#style
+    .class
+        color: white
+</style>
