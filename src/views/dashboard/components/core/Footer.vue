@@ -10,9 +10,9 @@
                 >
                     <a
                         :href="link.href"
+                        :target="link.target"
                         class="mr-0 grey--text text--darken-3"
                         rel="noopener"
-                        target="_blank"
                         v-text="link.text"
                     />
                 </v-col>
@@ -38,25 +38,24 @@
 import moment from 'moment'
 
 export default {
-    name: 'DashboardCoreFooter',
-
     data: () => ({
         links: [
             {
                 href: 'https://docs.nito.exchange',
                 text: 'Docs',
+                target: '_blank',
             },
             {
                 href: 'javascript://',
-                text: 'About Us',
+                text: 'About',
             },
             {
                 href: 'javascript://',
-                text: 'Blog',
+                text: 'FAQ',
             },
             {
-                href: 'javascript://',
-                text: 'Licenses',
+                href: 'canary',
+                text: 'Canary',
             },
         ],
     }),
