@@ -102,17 +102,17 @@ export default {
             {
                 title: 'coins-manager',
                 icon: 'mdi-account',
-                to: '/pages/user',
+                to: '/manager',
             },
             {
                 title: 'transactions',
                 icon: 'mdi-clipboard-outline',
-                to: '/tables/regular-tables',
+                to: '/transactions',
             },
             {
                 title: 'activity-monitor',
                 icon: 'mdi-bell',
-                to: '/components/notifications',
+                to: '/monitor',
             },
             {
                 title: 'icons',

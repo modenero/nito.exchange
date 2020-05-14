@@ -9,40 +9,30 @@ export default new Router({
     routes: [
         {
             path: '/',
-            component: () => import('@/views/dashboard/Index'),
+            component: () => import('@/views/Index'),
             children: [
                 // Dashboard
                 {
                     name: 'Overview',
                     path: '',
-                    component: () => import('@/views/dashboard/Dashboard'),
+                    component: () => import('@/views/Dashboard'),
                 },
                 // Pages
                 {
                     name: 'Coin Manager',
-                    path: 'pages/user',
-                    component: () => import('@/views/dashboard/pages/UserProfile'),
+                    path: 'manager',
+                    component: () => import('@/views/Manager'),
                 },
                 {
                     name: 'Activity Monitor',
-                    path: 'components/notifications',
-                    component: () => import('@/views/dashboard/component/Notifications'),
-                },
-                {
-                    name: 'Icons',
-                    path: 'components/icons',
-                    component: () => import('@/views/dashboard/component/Icons'),
-                },
-                {
-                    name: 'Component View',
-                    path: 'component',
-                    component: () => import('@/views/dashboard/component/Tabs'),
+                    path: 'monitor',
+                    component: () => import('@/views/Monitor'),
                 },
                 // Tables
                 {
                     name: 'Transactions',
-                    path: 'tables/regular-tables',
-                    component: () => import('@/views/dashboard/tables/RegularTables'),
+                    path: 'transactions',
+                    component: () => import('@/views/Transactions'),
                 },
                 // Upgrade
                 {
@@ -61,6 +51,22 @@ export default new Router({
                     name: 'Warrant Canary',
                     path: 'canary',
                     component: () => import('@/views/Canary'),
+                },
+                // Template Samples
+                {
+                    name: 'Icons',
+                    path: 'components/icons',
+                    component: () => import('@/views/component/Icons'),
+                },
+                {
+                    name: 'Component View',
+                    path: 'component',
+                    component: () => import('@/views/component/Tabs'),
+                },
+                {
+                    name: 'Notifications',
+                    path: 'notifications',
+                    component: () => import('@/views/component/Notifications'),
                 },
             ],
         },
