@@ -99,6 +99,13 @@
             </v-simple-table>
         </base-material-card>
 
+        <v-pagination
+            :length="5"
+            :value="1"
+            circle
+            class="justify-start"
+        />
+
         <div class="py-3" />
 
         <base-material-card
@@ -184,5 +191,15 @@
                 </tbody>
             </v-simple-table>
         </base-material-card>
+
+        <v-pagination
+            :length="3"
+            :value="2"
+            circle
+            class="justify-start"
+            next-icon="mdi-menu-right"
+            prev-icon="mdi-menu-left"
+        />
+
     </v-container>
 </template>

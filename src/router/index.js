@@ -18,25 +18,30 @@ export default new Router({
                     component: () => import('@/views/Dashboard'),
                 },
 
-                /* Coin Manager */
+                /* Coins Manager */
                 {
-                    name: 'Coin Manager',
-                    path: 'manager',
-                    component: () => import('@/views/Manager'),
+                    name: 'Coins Manager',
+                    path: 'coins',
+                    component: () => import('@/views/Coins'),
                 },
 
                 /* Activity Monitor */
                 {
-                    name: 'Activity Monitor',
-                    path: 'monitor',
-                    component: () => import('@/views/Monitor'),
+                    name: 'CashShuffle',
+                    path: 'cashshuffle',
+                    component: () => import('@/views/CashShuffle'),
+                },
+                {
+                    name: 'CashFusion',
+                    path: 'cashfusion',
+                    component: () => import('@/views/CashFusion'),
                 },
 
-                /* Transactions */
+                /* History */
                 {
-                    name: 'Transactions',
-                    path: 'transactions',
-                    component: () => import('@/views/Transactions'),
+                    name: 'History',
+                    path: 'history',
+                    component: () => import('@/views/History'),
                 },
 
                 /* Help & Support */
@@ -65,26 +70,11 @@ export default new Router({
                     component: () => import('@/views/Canary'),
                 },
 
-                /* Templates */
+                /* Blank Template */
                 {
-                    name: 'Buttons',
-                    path: 'buttons',
-                    component: () => import('@/views/templates/Buttons'),
-                },
-                {
-                    name: 'Grid',
-                    path: 'grid',
-                    component: () => import('@/views/templates/Grid'),
-                },
-                {
-                    name: 'Icons',
-                    path: 'icons',
-                    component: () => import('@/views/templates/Icons'),
-                },
-                {
-                    name: 'Notifications',
-                    path: 'notifications',
-                    component: () => import('@/views/templates/Notifications'),
+                    name: 'Blank',
+                    path: 'blank',
+                    component: () => import('@/views/Blank'),
                 },
             ],
         },

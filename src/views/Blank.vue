@@ -2,6 +2,19 @@
     <v-container fluid tag="section">
         <base-v-component heading="Grid System" link="components/grid" />
 
+        <v-row>
+            <v-col class="ml-auto mr-auto" md="8">
+                <base-material-alert
+                    color="error"
+                    dark
+                    dismissible
+                    icon="mdi-bell"
+                >
+                    This is simply a BLANK template offering ALL the necessary components to build a new pageview.
+                </base-material-alert>
+            </v-col>
+        </v-row>
+
         <v-row class="text-center">
             <base-subheading
                 subheading="XS Grid"
