@@ -11,62 +11,80 @@ export default new Router({
             path: '/',
             component: () => import('@/views/Index'),
             children: [
-                // Dashboard
+                /* Dashboard */
                 {
-                    name: 'Overview',
+                    name: 'Dashboard',
                     path: '',
                     component: () => import('@/views/Dashboard'),
                 },
-                // Pages
+
+                /* Coin Manager */
                 {
                     name: 'Coin Manager',
                     path: 'manager',
                     component: () => import('@/views/Manager'),
                 },
+
+                /* Activity Monitor */
                 {
                     name: 'Activity Monitor',
                     path: 'monitor',
                     component: () => import('@/views/Monitor'),
                 },
-                // Tables
+
+                /* Transactions */
                 {
                     name: 'Transactions',
                     path: 'transactions',
                     component: () => import('@/views/Transactions'),
                 },
-                // Upgrade
+
+                /* Help & Support */
                 {
                     name: 'Need Help?',
                     path: 'upgrade',
                     component: () => import('@/views/Upgrade'),
                 },
-                // Donate
+
+                /* Donate */
                 {
                     name: 'Donation',
                     path: 'donate',
                     component: () => import('@/views/Donate'),
                 },
-                // Warrant Canary
+
+                /* Warrant Canary */
                 {
                     name: 'Warrant Canary',
                     path: 'canary',
                     component: () => import('@/views/Canary'),
                 },
-                // Template Samples
+
+                /* Templates */
                 {
-                    name: 'Icons',
-                    path: 'components/icons',
-                    component: () => import('@/views/component/Icons'),
+                    name: 'Buttons',
+                    path: 'buttons',
+                    component: () => import('@/views/templates/Buttons'),
                 },
                 {
-                    name: 'Component View',
-                    path: 'component',
-                    component: () => import('@/views/component/Tabs'),
+                    name: 'Grid',
+                    path: 'grid',
+                    component: () => import('@/views/templates/Grid'),
+                },
+                {
+                    name: 'Icons',
+                    path: 'icons',
+                    component: () => import('@/views/templates/Icons'),
                 },
                 {
                     name: 'Notifications',
                     path: 'notifications',
-                    component: () => import('@/views/component/Notifications'),
+                    component: () => import('@/views/templates/Notifications'),
+                },
+                {
+                    name: 'Tabs',
+                    path: 'tabs',
+                    component: () => import('@/views/templates/Tabs'),
                 },
             ],
         },
