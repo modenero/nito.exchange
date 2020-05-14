@@ -50,7 +50,7 @@ export default {
                 text: 'About',
             },
             {
-                href: 'javascript://',
+                href: 'faq',
                 text: 'FAQ',
             },
             {

@@ -112,9 +112,9 @@
 </template>
 
 <script>
-  export default {
-    name: 'DashboardDashboard',
-  }
+export default {
+    // 
+}
 </script>
 
 <style lang="sass">

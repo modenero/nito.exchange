@@ -42,8 +42,13 @@ export default new Router({
                 /* Help & Support */
                 {
                     name: 'Need Help?',
-                    path: 'upgrade',
-                    component: () => import('@/views/Upgrade'),
+                    path: 'help',
+                    component: () => import('@/views/Help'),
+                },
+                {
+                    name: 'Frequently Asked Questions',
+                    path: 'faq',
+                    component: () => import('@/views/FAQ'),
                 },
 
                 /* Donate */
@@ -80,11 +85,6 @@ export default new Router({
                     name: 'Notifications',
                     path: 'notifications',
                     component: () => import('@/views/templates/Notifications'),
-                },
-                {
-                    name: 'Tabs',
-                    path: 'tabs',
-                    component: () => import('@/views/templates/Tabs'),
                 },
             ],
         },

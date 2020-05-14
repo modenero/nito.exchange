@@ -134,11 +134,6 @@ export default {
                 icon: 'mdi-format-font',
                 to: '/notifications',
             },
-            {
-                title: 'tabs',
-                icon: 'mdi-format-font',
-                to: '/tabs',
-            },
         ],
     }),
 
