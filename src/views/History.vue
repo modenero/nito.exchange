@@ -1,12 +1,10 @@
 <template>
     <v-container id="regular-tables" fluid tag="section">
 
-        <v-btn-toggle color="teal">
-            <v-btn>Show All</v-btn>
-
-            <v-btn>Shuffles</v-btn>
-
-            <v-btn>Fusions</v-btn>
+        <v-btn-toggle>
+            <v-btn :color="tab.all" @click="toggle('all')">Show All</v-btn>
+            <v-btn :color="tab.shuffles" @click="toggle('shuffles')">Shuffles</v-btn>
+            <v-btn :color="tab.fusions" @click="toggle('fusions')">Fusions</v-btn>
         </v-btn-toggle>
 
         <base-material-card
@@ -110,3 +108,31 @@
 
     </v-container>
 </template>
+
+<script>
+export default {
+    data: () => ({
+        tab: {
+            all: 'secondary',
+            shuffles: '',
+            fusions: '',
+        },
+    }),
+    methods: {
+        /**
+         * Toggle Tab
+         */
+        toggle(_tab) {
+            /* Reset tabs. */
+            this.tab = {
+                all: '',
+                shuffles: '',
+                fusions: '',
+            }
+
+            /* Set active tab. */
+            this.tab[_tab] = 'secondary'
+        },
+    },
+}
+</script>

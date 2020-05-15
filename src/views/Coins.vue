@@ -1,7 +1,7 @@
 <template>
     <v-container id="user-profile" fluid tag="section">
 
-        <v-btn-toggle color="teal">
+        <v-btn-toggle>
             <v-btn>List All</v-btn>
 
             <v-btn>Deposit</v-btn>

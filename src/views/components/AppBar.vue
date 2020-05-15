@@ -28,6 +28,10 @@
             v-text="$route.name"
         />
 
+        <v-icon class="ml-2">
+            mdi-{{icon}}
+        </v-icon>
+
         <v-spacer />
 
         <v-text-field
@@ -69,7 +73,7 @@
                 >
                     <v-badge color="red" overlap bordered>
                         <template v-slot:badge>
-                            <span>5</span>
+                            <span>{{numNotif}}</span>
                         </template>
 
                         <v-icon>mdi-bell</v-icon>
@@ -138,12 +142,51 @@ export default {
             `CashShuffle completed 5 mins ago`,
             `1,337 bits deposited 26 mins ago`,
             `Another Notification`,
-            `Another one`,
         ],
     }),
 
     computed: {
         ...mapState(['drawer']),
+
+        numNotif() {
+            return this.notifications.length
+        },
+
+        icon() {
+            switch(this.$route.path) {
+            case '/':
+                return 'view-dashboard'
+            case '/about':
+                // return 'file-document'
+                return 'domain'
+            case '/canary':
+                return 'gavel'
+            case '/cashfusion':
+                return 'electron-framework'
+            case '/cashshuffle':
+                return 'recycle-variant'
+            case '/cloud':
+                return 'cloud-sync-outline'
+            case '/coins':
+                return 'bitcoin'
+            case '/donate':
+                return 'charity'
+            case '/faq':
+                return 'frequently-asked-questions'
+            case '/help':
+                return 'lifebuoy'
+            case '/history':
+                return 'format-list-text'
+            case '/settings':
+                return 'tune'
+            // case '/':
+            //     return ''
+            // case '/':
+            //     return ''
+            default:
+                return 'help'
+            }
+        },
     },
 
     methods: {

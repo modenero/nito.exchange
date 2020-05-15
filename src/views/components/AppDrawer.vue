@@ -102,32 +102,32 @@ export default {
             {
                 title: 'coins-manager',
                 icon: 'mdi-bitcoin',
-                to: '/coins',
+                to: 'coins',
             },
             {
                 title: 'cashshuffle',
                 icon: 'mdi-recycle-variant',
-                to: '/cashshuffle',
+                to: 'cashshuffle',
             },
             {
                 title: 'cashfusion',
                 icon: 'mdi-electron-framework',
-                to: '/cashfusion',
+                to: 'cashfusion',
             },
             {
                 title: 'nito-cloud',
                 icon: 'mdi-cloud-sync-outline',
-                to: '/cloud',
+                to: 'cloud',
             },
             {
                 title: 'history',
                 icon: 'mdi-format-list-text',
-                to: '/history',
+                to: 'history',
             },
             {
                 title: 'settings',
                 icon: 'mdi-tune',
-                to: '/settings',
+                to: 'settings',
             },
         ],
     }),

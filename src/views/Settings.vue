@@ -1,14 +1,6 @@
 <template>
     <v-container id="user-profile" fluid tag="section">
 
-        <v-btn-toggle color="teal">
-            <v-btn>List All</v-btn>
-
-            <v-btn>Deposit</v-btn>
-
-            <v-btn>Withdraw</v-btn>
-        </v-btn-toggle>
-
         <v-row justify="center">
             <v-col cols="12" md="8">
                 <base-material-card>
@@ -287,7 +279,7 @@ export default {
 }
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
 .v-settings
     .v-item-group > *
         cursor: pointer
@@ -300,4 +292,6 @@ export default {
         &--active
             border-color: #00cae3 !important
 
+.v-card-profile
+    margin-top: 80px
 </style>

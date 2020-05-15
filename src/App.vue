@@ -105,3 +105,12 @@ export default {
     },
 }
 </script>
+
+<style lang="sass" scoped>
+base-material-alert
+    p
+        font-weight: 600
+        margin: 0
+    strong
+        font-size: 1.1em
+</style>
