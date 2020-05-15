@@ -6,7 +6,7 @@
 
             <v-btn>Deposit</v-btn>
 
-            <v-btn>Withdraw</v-btn>
+            <v-btn>Send</v-btn>
         </v-btn-toggle>
 
         <v-row justify="center">
@@ -140,7 +140,7 @@
 export default {
     data: () => {
         return {
-            // 
+            //
         }
     }
 }

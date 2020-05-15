@@ -9,8 +9,16 @@
                     cols="auto"
                 >
                     <a
+                        v-if="link.target"
                         :href="link.href"
                         :target="link.target"
+                        class="mr-0 grey--text text--darken-3"
+                        rel="noopener"
+                        v-text="link.text"
+                    />
+                    <router-link
+                        v-else
+                        :to="link.href"
                         class="mr-0 grey--text text--darken-3"
                         rel="noopener"
                         v-text="link.text"
@@ -41,17 +49,17 @@ export default {
     data: () => ({
         links: [
             {
-                href: 'https://docs.nito.exchange',
-                text: 'Docs',
-                target: '_blank',
-            },
-            {
-                href: 'javascript://',
+                href: 'about',
                 text: 'About',
             },
             {
                 href: 'faq',
                 text: 'FAQ',
+            },
+            {
+                href: 'https://docs.nito.exchange',
+                text: 'Docs',
+                target: '_blank',
             },
             {
                 href: 'canary',

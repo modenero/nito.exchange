@@ -36,10 +36,15 @@ export default new Router({
                     path: 'cashfusion',
                     component: () => import('@/views/CashFusion'),
                 },
+                {
+                    name: 'Nito Cloud',
+                    path: 'cloud',
+                    component: () => import('@/views/Cloud'),
+                },
 
                 /* History */
                 {
-                    name: 'History',
+                    name: 'Transaction History',
                     path: 'history',
                     component: () => import('@/views/History'),
                 },
@@ -51,7 +56,12 @@ export default new Router({
                     component: () => import('@/views/Settings'),
                 },
 
-                /* Help & Support */
+                /* Exchange Pages */
+                {
+                    name: 'About Nito Exchange',
+                    path: 'about',
+                    component: () => import('@/views/About'),
+                },
                 {
                     name: 'Need Help?',
                     path: 'help',
@@ -62,15 +72,11 @@ export default new Router({
                     path: 'faq',
                     component: () => import('@/views/FAQ'),
                 },
-
-                /* Donate */
                 {
                     name: 'Donation',
                     path: 'donate',
                     component: () => import('@/views/Donate'),
                 },
-
-                /* Warrant Canary */
                 {
                     name: 'Warrant Canary',
                     path: 'canary',

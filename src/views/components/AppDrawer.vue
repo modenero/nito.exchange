@@ -27,7 +27,7 @@
                     color="white"
                     contain
                 >
-                    <v-img src="avatar.png" max-height="30" />
+                    <v-img :src="require('@/assets/avatar.png')" max-height="30" />
                 </v-list-item-avatar>
 
                 <v-list-item-content>
@@ -107,13 +107,17 @@ export default {
             {
                 title: 'cashshuffle',
                 icon: 'mdi-recycle-variant',
-                // icon: 'mdi-rotate-orbit',
                 to: '/cashshuffle',
             },
             {
                 title: 'cashfusion',
                 icon: 'mdi-electron-framework',
                 to: '/cashfusion',
+            },
+            {
+                title: 'nito-cloud',
+                icon: 'mdi-cloud-sync-outline',
+                to: '/cloud',
             },
             {
                 title: 'history',

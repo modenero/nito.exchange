@@ -1,13 +1,13 @@
 <template>
-    <v-container
-        id="timeline"
-        fluid
-        tag="section"
-    >
-        <base-v-component
-            heading="Timelines"
-            link="components/timelines"
-        />
+    <v-container id="timeline" fluid tag="section">
+
+        <v-btn-toggle color="teal">
+            <v-btn>Monitor</v-btn>
+
+            <v-btn>Pools</v-btn>
+
+            <v-btn>Statistics</v-btn>
+        </v-btn-toggle>
 
         <v-row>
             <v-col>
