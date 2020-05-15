@@ -120,6 +120,11 @@ export default {
                 icon: 'mdi-format-list-text',
                 to: '/history',
             },
+            {
+                title: 'settings',
+                icon: 'mdi-tune',
+                to: '/settings',
+            },
         ],
     }),
 

@@ -2,8 +2,8 @@
     <v-app>
         <app-bar />
         <app-drawer />
+        <app-info />
         <app-view />
-        <app-settings />
     </v-app>
 </template>
 
@@ -12,7 +12,7 @@ export default {
     components: {
         AppBar: () => import('./components/AppBar'),
         AppDrawer: () => import('./components/AppDrawer'),
-        AppSettings: () => import('./components/AppSettings'),
+        AppInfo: () => import('./components/AppInfo'),
         AppView: () => import('./components/AppView'),
     },
 

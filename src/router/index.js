@@ -44,6 +44,13 @@ export default new Router({
                     component: () => import('@/views/History'),
                 },
 
+                /* Settings */
+                {
+                    name: 'Settings',
+                    path: 'settings',
+                    component: () => import('@/views/Settings'),
+                },
+
                 /* Help & Support */
                 {
                     name: 'Need Help?',

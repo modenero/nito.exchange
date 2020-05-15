@@ -34,7 +34,7 @@
             :label="$t('search')"
             color="secondary"
             hide-details
-            style="max-width: 165px;"
+            style="max-width: 300px;"
         >
             <template
                 v-if="$vuetify.breakpoint.mdAndUp"
@@ -48,9 +48,9 @@
 
         <div class="mx-3" />
 
-        <v-btn class="ml-2" min-width="0" text to="/">
+        <!-- <v-btn class="ml-2" min-width="0" text to="/">
             <v-icon>mdi-view-dashboard</v-icon>
-        </v-btn>
+        </v-btn> -->
 
         <v-menu
             bottom
