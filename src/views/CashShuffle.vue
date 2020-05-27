@@ -4,19 +4,19 @@
         <v-btn-toggle>
             <v-btn :color="tab.stats" @click="toggle('stats')">Statistics</v-btn>
             <v-btn :color="tab.pools" @click="toggle('pools')">Pools</v-btn>
-            <v-btn :color="tab.security" @click="toggle('security')">Security</v-btn>
+            <v-btn :color="tab.guide" @click="toggle('guide')">Guide</v-btn>
         </v-btn-toggle>
 
         <v-row v-if="tab.stats">
-            <StatsView />
+            <Stats />
         </v-row>
 
         <v-row v-if="tab.pools">
-            <PoolsView />
+            <Pools />
         </v-row>
 
-        <v-row v-if="tab.security">
-            <SecurityView />
+        <v-row v-if="tab.guide">
+            <Guide />
         </v-row>
 
     </v-container>
@@ -24,21 +24,21 @@
 
 <script>
 /* Import components. */
-import PoolsView from './cashshuffle/Pools'
-import SecurityView from './cashshuffle/Security'
-import StatsView from './cashshuffle/Stats'
+import Pools from './cashshuffle/Pools'
+import Guide from './cashshuffle/Guide'
+import Stats from './cashshuffle/Stats'
 
 export default {
     components: {
-        PoolsView,
-        SecurityView,
-        StatsView,
+        Pools,
+        Guide,
+        Stats,
     },
     data: () => ({
         tab: {
             stats: 'secondary',
             pools: '',
-            security: '',
+            guide: '',
         },
     }),
     methods: {
@@ -50,7 +50,7 @@ export default {
             this.tab = {
                 stats: '',
                 pools: '',
-                security: '',
+                guide: '',
             }
 
             /* Set active tab. */

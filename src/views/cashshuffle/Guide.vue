@@ -2,8 +2,8 @@
     <v-container fluid tag="section">
         <v-row class="text-center">
             <base-subheading
-                subheading="XS Grid"
-                text="Always Horizontal"
+                subheading="CashShuffle Guide"
+                text="Get started with CashShuffle today!"
                 class="pb-0 pl-3 mt-5"
             />
 

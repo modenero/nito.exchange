@@ -173,6 +173,9 @@
 </template>
 
 <script>
+/* Initialize vuex. */
+import { mapActions, mapGetters } from 'vuex'
+
 export default {
     components: {
         ParagraphHeading: {
@@ -182,6 +185,27 @@ export default {
                 }, this.$slots.default)
             },
         },
+    },
+    data() {
+        return {
+            //
+        }
+    },
+    computed: {
+        ...mapGetters('purse', [
+            // 'getActiveSessionId',
+            // 'getSessions',
+        ]),
+
+    },
+    methods: {
+        ...mapActions('purse', [
+            // 'createSession',
+        ]),
+
+    },
+    created: function () {
+        //
     },
 }
 </script>

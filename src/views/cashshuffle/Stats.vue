@@ -3,7 +3,22 @@
 
         <History />
 
-        <Charts />
+        <v-row>
+            <v-col>
+                There are a total of 8 CashShuffle tiers, ranging from
+                <br /><strong>0.0001 BTC | $0.0250</strong>
+                <br />to
+                <br /><strong>1,000 BTC | $250,000</strong>
+            </v-col>
+        </v-row>
+
+        <Pools />
+
+        <v-row>
+            <v-col>
+                Take a deep dive into the individual CashShuffle transactions.
+            </v-col>
+        </v-row>
 
         <Last100 />
 
@@ -12,14 +27,14 @@
 
 <script>
 /* Import components. */
-import Charts from './stats/Charts'
 import History from './stats/History'
+import Pools from './stats/Pools'
 import Last100 from './stats/Last100'
 
 export default {
     components: {
-        Charts,
         History,
+        Pools,
         Last100,
     },
     data: () => {

@@ -6,7 +6,7 @@ import Vuex from 'vuex'
 import createPersistedState from 'vuex-persistedstate'
 
 /* Import (local) modules. */
-// import blockchain from './modules/blockchain'
+import blockchain from './modules/blockchain'
 // import purse from './modules/purse'
 import system from './modules/system'
 // import utils from './modules/utils'
@@ -17,7 +17,7 @@ Vue.use(Vuex)
 /* Export store. */
 export default new Vuex.Store({
     modules: {
-        // blockchain,
+        blockchain,
         // purse,
         system,
         // utils,

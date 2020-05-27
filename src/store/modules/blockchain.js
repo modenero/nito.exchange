@@ -2,13 +2,13 @@
 // import telr from '../../api/telr'
 
 /* Import modules (getters). */
-import getAccountBalance from './blockchain/getters/getAccountBalance'
-import getConn from './blockchain/getters/getConn'
+// import getAccountBalance from './blockchain/getters/getAccountBalance'
+// import getConn from './blockchain/getters/getConn'
 import getTicker from './blockchain/getters/getTicker'
 
 /* Import modules (actions). */
-import closeConn from './blockchain/actions/closeConn'
-import openConn from './blockchain/actions/openConn'
+// import closeConn from './blockchain/actions/closeConn'
+// import openConn from './blockchain/actions/openConn'
 
 /* Import modules (mutations). */
 // ...
@@ -35,15 +35,15 @@ const state = {
 
 /* Getters. */
 const getters = {
-    getAccountBalance,
-    getConn,
+    // getAccountBalance,
+    // getConn,
     getTicker,
 }
 
 /* Actions. */
 const actions = {
-    closeConn,
-    openConn,
+    // closeConn,
+    // openConn,
 }
 
 /* Mutations. */
