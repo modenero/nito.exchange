@@ -32,9 +32,9 @@ export default new Router({
                     component: () => import('@/views/Send'),
                 },
 
-                /* History */
+                /* Event History */
                 {
-                    name: 'Transaction History',
+                    name: 'Event History',
                     path: 'history',
                     component: () => import('@/views/History'),
                 },

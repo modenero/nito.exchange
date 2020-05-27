@@ -2,6 +2,34 @@
     <v-app>
         <router-view />
 
+        <!-- Floating Action Button (FAB) -->
+        <!-- <v-speed-dial
+            v-model="fab"
+            :bottom="true"
+            :right="true"
+            direction="top"
+            transition="'slide-y-reverse-transition'"
+        >
+            <template v-slot:activator>
+                <v-btn v-model="fab" color="blue darken-2" dark fab>
+                    <v-icon v-if="fab">mdi-close</v-icon>
+                    <v-icon v-else>mdi-account-circle</v-icon>
+                </v-btn>
+            </template>
+
+            <v-btn fab dark small color="green">
+                <v-icon>mdi-pencil</v-icon>
+            </v-btn>
+
+            <v-btn fab dark small color="indigo">
+                <v-icon>mdi-plus</v-icon>
+            </v-btn>
+
+            <v-btn fab dark small color="red">
+                <v-icon>mdi-delete</v-icon>
+            </v-btn>
+        </v-speed-dial> -->
+
         <!-- Snackbar -->
         <base-material-snackbar
             v-model = "snackbar"
@@ -96,6 +124,7 @@ export default {
             alert: false,
             dialog: false,
             snackbar: false,
+            fab: false,
         }
     },
     computed: {
@@ -113,4 +142,10 @@ base-material-alert
         margin: 0
     strong
         font-size: 1.1em
+
+// .v-speed-dial
+//     position: absolute
+//
+// .v-btn--floating
+//     position: relative
 </style>

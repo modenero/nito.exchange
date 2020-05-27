@@ -1,15 +1,20 @@
 <template>
     <v-container id="regular-tables" fluid tag="section">
 
-        <v-btn-toggle>
-            <v-btn :color="tab.all" @click="toggle('all')">Show All</v-btn>
-            <v-btn :color="tab.shuffles" @click="toggle('shuffles')">Shuffles</v-btn>
-            <v-btn :color="tab.fusions" @click="toggle('fusions')">Fusions</v-btn>
+        <v-btn-toggle class="d-none d-md-inline">
+            <v-btn :color="tab.all" @click="toggle('all')">Sessions</v-btn>
+            <v-btn :color="tab.shuffles" @click="toggle('shuffles')">Deposits & Transfers</v-btn>
+            <v-btn :color="tab.fusions" @click="toggle('fusions')">Application</v-btn>
+        </v-btn-toggle>
+        <v-btn-toggle class="d-md-none">
+            <v-btn :color="tab.all" @click="toggle('all')">Sessions</v-btn>
+            <v-btn :color="tab.shuffles" @click="toggle('shuffles')">Transfers</v-btn>
+            <v-btn :color="tab.fusions" @click="toggle('fusions')">Events</v-btn>
         </v-btn-toggle>
 
         <base-material-card
             icon="mdi-rotate-orbit"
-            title="All Shuffles & Fusions"
+            title="My Sessions"
             class="px-5 py-3"
         >
             <v-simple-table>

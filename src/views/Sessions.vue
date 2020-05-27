@@ -2,13 +2,18 @@
     <v-container id="user-profile" fluid tag="section">
 
         <v-btn-toggle>
-            <v-btn :color="tab.coins" @click="toggle('coins')">Current</v-btn>
+            <v-btn :color="tab.current" @click="toggle('current')">Current</v-btn>
             <v-btn :color="tab.manage" @click="toggle('manage')">Directory</v-btn>
             <v-btn :color="tab.monitor" @click="toggle('monitor')">Monitor</v-btn>
         </v-btn-toggle>
 
         <v-row justify="center">
             <v-col cols="12" md="7">
+
+                <v-row v-if="tab.current">
+                    <CurrentView />
+                </v-row>
+
                 <v-row v-if="tab.manage">
 
                     <base-material-card>
@@ -110,7 +115,7 @@
                 </v-row>
 
                 <v-row v-if="tab.monitor">
-                    <!-- <stats-view /> -->
+                    <MonitorView />
                 </v-row>
             </v-col>
 
@@ -143,12 +148,22 @@
 </template>
 
 <script>
+/* Import components. */
+import CurrentView from './sessions/Current'
+import MonitorView from './sessions/Monitor'
+// import StatsView from './sessions/Stats'
+
 export default {
+    components: {
+        CurrentView,
+        MonitorView,
+        // StatsView,
+    },
     data: () => {
         return {
             tab: {
+                current: '',
                 manage: 'secondary',
-                coins: '',
                 monitor: '',
             },
         }
@@ -160,8 +175,8 @@ export default {
         toggle(_tab) {
             /* Reset tabs. */
             this.tab = {
+                current: '',
                 manage: '',
-                coins: '',
                 monitor: '',
             }
 
