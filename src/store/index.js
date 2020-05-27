@@ -1,23 +1,27 @@
+/* Import (core) modules. */
 import Vue from 'vue'
 import Vuex from 'vuex'
 
+/* Import persisted state (for vuex). */
+import createPersistedState from 'vuex-persistedstate'
+
+/* Import (local) modules. */
+// import blockchain from './modules/blockchain'
+// import purse from './modules/purse'
+// import system from './modules/system'
+// import utils from './modules/utils'
+
+/* Initialize Vuex. */
 Vue.use(Vuex)
 
+/* Export store. */
 export default new Vuex.Store({
-    state: {
-        barColor: 'rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)',
-        barImage: require('@/assets/sidebar-04.jpg'),
-        drawer: null,
+    modules: {
+        // blockchain,
+        // purse,
+        // system,
+        // utils,
     },
-    mutations: {
-        SET_BAR_IMAGE (state, payload) {
-            state.barImage = payload
-        },
-        SET_DRAWER (state, payload) {
-            state.drawer = payload
-        },
-    },
-    actions: {
-        //
-    },
+    plugins: [createPersistedState()],
+    strict: process.env.NODE_ENV !== 'production'
 })

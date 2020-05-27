@@ -18,28 +18,18 @@ export default new Router({
                     component: () => import('@/views/Dashboard'),
                 },
 
-                /* Coins Manager */
+                /* Sessions Manager */
                 {
-                    name: 'Coins Manager',
-                    path: 'coins',
-                    component: () => import('@/views/Coins'),
+                    name: 'Sessions Manager',
+                    path: 'sessions',
+                    component: () => import('@/views/Sessions'),
                 },
 
-                /* Activity Monitor */
+                /* Send Coins */
                 {
-                    name: 'CashShuffle',
-                    path: 'cashshuffle',
-                    component: () => import('@/views/CashShuffle'),
-                },
-                {
-                    name: 'CashFusion',
-                    path: 'cashfusion',
-                    component: () => import('@/views/CashFusion'),
-                },
-                {
-                    name: 'Nito Cloud',
-                    path: 'cloud',
-                    component: () => import('@/views/Cloud'),
+                    name: 'Send Coins',
+                    path: 'send',
+                    component: () => import('@/views/Send'),
                 },
 
                 /* History */
@@ -54,6 +44,18 @@ export default new Router({
                     name: 'Settings',
                     path: 'settings',
                     component: () => import('@/views/Settings'),
+                },
+
+                /* Activity Monitor */
+                {
+                    name: 'CashShuffle',
+                    path: 'cashshuffle',
+                    component: () => import('@/views/CashShuffle'),
+                },
+                {
+                    name: 'CashFusion',
+                    path: 'cashfusion',
+                    component: () => import('@/views/CashFusion'),
                 },
 
                 /* Exchange Pages */

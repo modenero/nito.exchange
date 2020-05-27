@@ -100,9 +100,19 @@ export default {
                 to: '/',
             },
             {
-                title: 'coins-manager',
-                icon: 'mdi-bitcoin',
-                to: 'coins',
+                title: 'sessions',
+                icon: 'mdi-pulse',
+                to: 'sessions',
+            },
+            {
+                title: 'history',
+                icon: 'mdi-format-list-text',
+                to: 'history',
+            },
+            {
+                title: 'send',
+                icon: 'mdi-send-outline',
+                to: 'send',
             },
             {
                 title: 'cashshuffle',
@@ -113,16 +123,6 @@ export default {
                 title: 'cashfusion',
                 icon: 'mdi-electron-framework',
                 to: 'cashfusion',
-            },
-            {
-                title: 'nito-cloud',
-                icon: 'mdi-cloud-sync-outline',
-                to: 'cloud',
-            },
-            {
-                title: 'history',
-                icon: 'mdi-format-list-text',
-                to: 'history',
             },
             {
                 title: 'settings',

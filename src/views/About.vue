@@ -137,3 +137,9 @@ export default {
     }
 }
 </script>
+
+<style lang="sass" scoped>
+.v-card-profile
+    margin-top: 80px
+
+</style>

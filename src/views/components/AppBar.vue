@@ -28,7 +28,7 @@
             v-text="$route.name"
         />
 
-        <v-icon class="ml-2">
+        <v-icon class="ml-2 mr-5">
             mdi-{{icon}}
         </v-icon>
 
@@ -165,10 +165,6 @@ export default {
                 return 'electron-framework'
             case '/cashshuffle':
                 return 'recycle-variant'
-            case '/cloud':
-                return 'cloud-sync-outline'
-            case '/coins':
-                return 'bitcoin'
             case '/donate':
                 return 'charity'
             case '/faq':
@@ -177,12 +173,12 @@ export default {
                 return 'lifebuoy'
             case '/history':
                 return 'format-list-text'
+            case '/send':
+                return 'send-outline'
+            case '/sessions':
+                return 'pulse'
             case '/settings':
                 return 'tune'
-            // case '/':
-            //     return ''
-            // case '/':
-            //     return ''
             default:
                 return 'help'
             }
