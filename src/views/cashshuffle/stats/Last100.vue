@@ -63,18 +63,18 @@ export default {
         return {
             bitbox: null,
 
-            cashShuffles: null,
+            activity: null,
         }
     },
     computed: {
         shuffleData() {
-            if (this.cashShuffles && this.cashShuffles.data) {
+            if (this.activity && this.activity.data) {
                 /* Set data. */
-                const data = this.cashShuffles.data.map(shuffleBlk => {
+                const data = this.activity.data.map(dataBlk => {
                     return {
-                        ...shuffleBlk,
-                        amount: this.formatValue(shuffleBlk.txs[0].inputs.min - 270),
-                        timeAgo: moment.unix(shuffleBlk.timestamp).fromNow(),
+                        ...dataBlk,
+                        amount: this.formatValue(dataBlk.txs[0].inputs.min - 270),
+                        timeAgo: moment.unix(dataBlk.timestamp).fromNow(),
                     }
                 })
 
@@ -133,8 +133,8 @@ export default {
             return console.error('Failed to retrieve CashShuffle activity.')
         }
 
-        /* Set CashShuffle activity. */
-        this.cashShuffles = body
+        /* Set activity. */
+        this.activity = body
 
     },
 }
