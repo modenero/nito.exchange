@@ -3,7 +3,7 @@
  */
 const addNotice = ({ commit, getters }, _notice) => {
     /* Validate notice. */
-    if (!_notice || !notice.id) {
+    if (!_notice || !_notice.id) {
         return
     }
 

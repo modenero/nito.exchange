@@ -17,23 +17,23 @@
 
         <base-material-card
             icon="mdi-rotate-orbit"
-            title="Activity for the last 144 blocks (~24 hours)"
+            title="CashShuffle activity for the last 100 blocks"
             class="px-5 py-3"
         >
             <v-simple-table>
                 <thead>
                     <tr>
                         <th class="primary--text">
-                            ID
+                            Block #
                         </th>
                         <th class="text-center primary--text">
                             # Shuffles
                         </th>
                         <th class="text-center primary--text">
-                            Inputs (min/max)
+                            Inputs (min | max)
                         </th>
                         <th class="text-center primary--text">
-                            Shuffle Amount
+                            Avg Shuffle Amount
                         </th>
                         <th class="text-right primary--text">
                             Event Time
@@ -46,11 +46,11 @@
                         <td>{{shuffle.id}}</td>
                         <td class="text-center">{{shuffle.txs.length}}</td>
                         <td class="text-center">
-                            <strong>{{shuffle.txs[0].inputs.min}}</strong> |
-                            <strong>{{shuffle.txs[0].inputs.max}}</strong>
+                            <strong>{{formatValue(shuffle.txs[0].inputs.min)}}</strong> |
+                            <strong>{{formatValue(shuffle.txs[0].inputs.max)}}</strong>
                         </td>
                         <td class="text-center">
-                            <strong>{{shuffle.txs[0].inputs.min - 270}}</strong>
+                            <strong>{{shuffle.amount}}</strong>
                         </td>
                         <td class="text-right"><em>{{shuffle.timeAgo}}</em></td>
                     </tr>
@@ -84,6 +84,8 @@ export default {
     },
     data: () => {
         return {
+            bitbox: null,
+
             cashFusions: null,
             cashShuffles: null,
         }
@@ -95,6 +97,7 @@ export default {
                 const data = this.cashShuffles.data.map(shuffleBlk => {
                     return {
                         ...shuffleBlk,
+                        amount: this.formatValue(shuffleBlk.txs[0].inputs.min - 270),
                         timeAgo: moment.unix(shuffleBlk.timestamp).fromNow(),
                     }
                 })
@@ -110,9 +113,35 @@ export default {
             }
         }
     },
+    methods: {
+        /**
+         * Initialize BITBOX
+         */
+        initBitbox() {
+            console.info('Initializing BITBOX..')
+
+            try {
+                /* Initialize BITBOX. */
+                // this.bitbox = new BITBOX()
+                this.bitbox = new window.BITBOX()
+            } catch (err) {
+                console.error(err)
+            }
+        },
+
+        formatValue(_value) {
+            const formatted = `${(_value / 100000000).toFixed(4)} BCH`
+
+            return formatted
+        },
+
+    },
     created: async function () {
+        /* Initialize BITBOX. */
+        this.initBitbox()
+
         /* Initialize start key. */
-        const startKey = 636800
+        const startKey = await this.bitbox.Blockchain.getBlockCount() - 100
 
         /* Initialize activity. */
         const activity = await superagent

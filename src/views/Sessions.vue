@@ -2,113 +2,119 @@
     <v-container id="user-profile" fluid tag="section">
 
         <v-btn-toggle>
-            <v-btn>List All</v-btn>
-
-            <v-btn>Deposit</v-btn>
-
-            <v-btn>Send</v-btn>
+            <v-btn :color="tab.coins" @click="toggle('coins')">Current</v-btn>
+            <v-btn :color="tab.manage" @click="toggle('manage')">Directory</v-btn>
+            <v-btn :color="tab.monitor" @click="toggle('monitor')">Monitor</v-btn>
         </v-btn-toggle>
 
         <v-row justify="center">
-            <v-col cols="12" md="8">
-                <base-material-card>
-                    <template v-slot:heading>
-                        <div class="display-2 font-weight-light">
-                            Edit Profile
-                        </div>
+            <v-col cols="12" md="7">
+                <v-row v-if="tab.manage">
 
-                        <div class="subtitle-1 font-weight-light">
-                            Complete your profile
-                        </div>
-                    </template>
+                    <base-material-card>
+                        <template v-slot:heading>
+                            <div class="display-2 font-weight-light">
+                                Edit Profile
+                            </div>
 
-                    <v-form>
-                        <v-container class="py-0">
-                            <v-row>
-                                <v-col cols="12" md="4">
-                                    <v-text-field
-                                        label="Company (disabled)"
-                                        disabled
-                                    />
-                                </v-col>
+                            <div class="subtitle-1 font-weight-light">
+                                Complete your profile
+                            </div>
+                        </template>
 
-                                <v-col cols="12" md="4">
-                                    <v-text-field
-                                        class="purple-input"
-                                        label="User Name"
-                                    />
-                                </v-col>
+                        <v-form>
+                            <v-container class="py-0">
+                                <v-row>
+                                    <v-col cols="12" md="4">
+                                        <v-text-field
+                                            label="Company (disabled)"
+                                            disabled
+                                        />
+                                    </v-col>
 
-                                <v-col cols="12" md="4">
-                                    <v-text-field
-                                        label="Email Address"
-                                        class="purple-input"
-                                    />
-                                </v-col>
+                                    <v-col cols="12" md="4">
+                                        <v-text-field
+                                            class="purple-input"
+                                            label="User Name"
+                                        />
+                                    </v-col>
 
-                                <v-col cols="12" md="6">
-                                    <v-text-field
-                                        label="First Name"
-                                        class="purple-input"
-                                    />
-                                </v-col>
+                                    <v-col cols="12" md="4">
+                                        <v-text-field
+                                            label="Email Address"
+                                            class="purple-input"
+                                        />
+                                    </v-col>
 
-                                <v-col cols="12" md="6">
-                                    <v-text-field
-                                        label="Last Name"
-                                        class="purple-input"
-                                    />
-                                </v-col>
+                                    <v-col cols="12" md="6">
+                                        <v-text-field
+                                            label="First Name"
+                                            class="purple-input"
+                                        />
+                                    </v-col>
 
-                                <v-col cols="12">
-                                    <v-text-field
-                                        label="Adress"
-                                        class="purple-input"
-                                    />
-                                </v-col>
+                                    <v-col cols="12" md="6">
+                                        <v-text-field
+                                            label="Last Name"
+                                            class="purple-input"
+                                        />
+                                    </v-col>
 
-                                <v-col cols="12" md="4">
-                                    <v-text-field
-                                        label="City"
-                                        class="purple-input"
-                                    />
-                                </v-col>
+                                    <v-col cols="12">
+                                        <v-text-field
+                                            label="Adress"
+                                            class="purple-input"
+                                        />
+                                    </v-col>
 
-                                <v-col cols="12" md="4">
-                                    <v-text-field
-                                        label="Country"
-                                        class="purple-input"
-                                    />
-                                </v-col>
+                                    <v-col cols="12" md="4">
+                                        <v-text-field
+                                            label="City"
+                                            class="purple-input"
+                                        />
+                                    </v-col>
 
-                                <v-col cols="12" md="4">
-                                    <v-text-field
-                                        class="purple-input"
-                                        label="Postal Code"
-                                        type="number"
-                                    />
-                                </v-col>
+                                    <v-col cols="12" md="4">
+                                        <v-text-field
+                                            label="Country"
+                                            class="purple-input"
+                                        />
+                                    </v-col>
 
-                                <v-col cols="12">
-                                    <v-textarea
-                                        class="purple-input"
-                                        label="About Me"
-                                        value="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                                    />
-                                </v-col>
+                                    <v-col cols="12" md="4">
+                                        <v-text-field
+                                            class="purple-input"
+                                            label="Postal Code"
+                                            type="number"
+                                        />
+                                    </v-col>
 
-                                <v-col cols="12" class="text-right">
-                                    <v-btn color="success" class="mr-0">
-                                        Update Profile
-                                    </v-btn>
-                                </v-col>
-                            </v-row>
-                        </v-container>
-                    </v-form>
-                </base-material-card>
+                                    <v-col cols="12">
+                                        <v-textarea
+                                            class="purple-input"
+                                            label="About Me"
+                                            value="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                                        />
+                                    </v-col>
+
+                                    <v-col cols="12" class="text-right">
+                                        <v-btn color="success" class="mr-0">
+                                            Update Profile
+                                        </v-btn>
+                                    </v-col>
+                                </v-row>
+                            </v-container>
+                        </v-form>
+                    </base-material-card>
+
+                </v-row>
+
+                <v-row v-if="tab.monitor">
+                    <!-- <stats-view /> -->
+                </v-row>
             </v-col>
 
-            <v-col cols="12" md="4">
+            <v-col cols="12" md="5">
                 <base-material-card
                     class="v-card-profile"
                     avatar="https://demos.creative-tim.com/vue-material-dashboard/img/marc.aba54d65.jpg"
@@ -140,8 +146,28 @@
 export default {
     data: () => {
         return {
-            //
+            tab: {
+                manage: 'secondary',
+                coins: '',
+                monitor: '',
+            },
         }
-    }
+    },
+    methods: {
+        /**
+         * Toggle Tab
+         */
+        toggle(_tab) {
+            /* Reset tabs. */
+            this.tab = {
+                manage: '',
+                coins: '',
+                monitor: '',
+            }
+
+            /* Set active tab. */
+            this.tab[_tab] = 'secondary'
+        },
+    },
 }
 </script>

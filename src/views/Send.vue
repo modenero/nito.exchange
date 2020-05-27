@@ -1,134 +1,162 @@
 <template>
-    <v-container id="timeline" fluid tag="section">
+    <v-container id="user-profile" fluid tag="section">
 
         <v-btn-toggle>
-            <v-btn :color="tab.monitor" @click="toggle('monitor')">Monitor</v-btn>
-            <v-btn :color="tab.pools" @click="toggle('pools')">Pools</v-btn>
-            <v-btn :color="tab.stats" @click="toggle('stats')">Statistics</v-btn>
+            <v-btn :color="tab.all" @click="toggle('all')">Show all</v-btn>
+            <v-btn :color="tab.deposit" @click="toggle('deposit')">My Coins</v-btn>
+            <v-btn :color="tab.monitor" @click="toggle('monitor')">My Addresses</v-btn>
         </v-btn-toggle>
 
-        <v-row>
-            <v-col class="ml-auto mr-auto" md="8">
-                <base-material-alert
-                    color="info"
-                    dark
-                    dismissible
-                    icon="mdi-bell"
-                >
-                    <p>
-                        <strong>Nito Cloud is coming soon!</strong>
-                        Please take a look at our <a href="https://docs.nito.exchange/ROADMAP.html" target="_blank"><strong>Development Roadmap</strong></a> to learn how you can help bring privacy to more Bitcoin Cash users today.
-                    </p>
-                </base-material-alert>
-            </v-col>
-        </v-row>
+        <v-row justify="center">
+            <v-col cols="12" md="8">
+                <v-row v-if="tab.all">
 
-        <v-row>
-            <v-col>
-                <v-timeline align-top>
-                    <v-timeline-item
-                        v-for="(timeline, i) in timelines"
-                        :key="i"
-                        :color="timeline.color"
-                        :icon="timeline.icon"
-                        fill-dot
-                        large
-                    >
-                        <v-card class="pa-6">
-                            <v-chip
-                                :color="timeline.color"
-                                class="overline mb-3"
-                                small
-                            >
-                                {{ timeline.chip }}
-                            </v-chip>
+                    <base-material-card>
+                        <template v-slot:heading>
+                            <div class="display-2 font-weight-light">
+                                Edit Profile
+                            </div>
 
-                            <p
-                                class="subtitle-1 font-weight-light"
-                                v-text="timeline.text"
-                            />
+                            <div class="subtitle-1 font-weight-light">
+                                Complete your profile
+                            </div>
+                        </template>
 
-                            <div
-                                class="text-uppercase body-2"
-                                v-text="timeline.subtext"
-                            />
+                        <v-form>
+                            <v-container class="py-0">
+                                <v-row>
+                                    <v-col cols="12" md="4">
+                                        <v-text-field
+                                            label="Company (disabled)"
+                                            disabled
+                                        />
+                                    </v-col>
 
-                            <template v-if="timeline.action">
-                                <v-divider class="mb-3" />
+                                    <v-col cols="12" md="4">
+                                        <v-text-field
+                                            class="purple-input"
+                                            label="User Name"
+                                        />
+                                    </v-col>
 
-                                <v-menu
-                                    v-model="menu"
-                                    bottom
-                                    offset-y
-                                    origin="top left"
-                                    right
-                                    transition="scale-transition"
-                                >
-                                    <template v-slot:activator="{ attrs, on }">
-                                        <v-btn
-                                            v-bind="attrs"
-                                            :color="timeline.action"
-                                            large
-                                            rounded
-                                            v-on="on"
-                                        >
-                                            <v-icon
-                                                left
-                                                v-text="timeline.actionIcon"
-                                            />
+                                    <v-col cols="12" md="4">
+                                        <v-text-field
+                                            label="Email Address"
+                                            class="purple-input"
+                                        />
+                                    </v-col>
 
-                                            <v-icon right>
-                                                {{ menu ? 'mdi-menu-up' : 'mdi-menu-down' }}
-                                            </v-icon>
+                                    <v-col cols="12" md="6">
+                                        <v-text-field
+                                            label="First Name"
+                                            class="purple-input"
+                                        />
+                                    </v-col>
+
+                                    <v-col cols="12" md="6">
+                                        <v-text-field
+                                            label="Last Name"
+                                            class="purple-input"
+                                        />
+                                    </v-col>
+
+                                    <v-col cols="12">
+                                        <v-text-field
+                                            label="Adress"
+                                            class="purple-input"
+                                        />
+                                    </v-col>
+
+                                    <v-col cols="12" md="4">
+                                        <v-text-field
+                                            label="City"
+                                            class="purple-input"
+                                        />
+                                    </v-col>
+
+                                    <v-col cols="12" md="4">
+                                        <v-text-field
+                                            label="Country"
+                                            class="purple-input"
+                                        />
+                                    </v-col>
+
+                                    <v-col cols="12" md="4">
+                                        <v-text-field
+                                            class="purple-input"
+                                            label="Postal Code"
+                                            type="number"
+                                        />
+                                    </v-col>
+
+                                    <v-col cols="12">
+                                        <v-textarea
+                                            class="purple-input"
+                                            label="About Me"
+                                            value="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                                        />
+                                    </v-col>
+
+                                    <v-col cols="12" class="text-right">
+                                        <v-btn color="success" class="mr-0">
+                                            Update Profile
                                         </v-btn>
-                                    </template>
+                                    </v-col>
+                                </v-row>
+                            </v-container>
+                        </v-form>
+                    </base-material-card>
 
-                                    <v-sheet>
-                                        <v-list>
-                                            <v-list-item
-                                                v-for="a in timeline.actions"
-                                                :key="a"
-                                                link
-                                            >
-                                                <v-list-item-title v-text="a" />
-                                            </v-list-item>
-                                        </v-list>
-                                    </v-sheet>
-                                </v-menu>
-                            </template>
-                        </v-card>
-                    </v-timeline-item>
-                </v-timeline>
+                </v-row>
+
+                <v-row v-if="tab.deposit">
+                    <!-- <pools-view /> -->
+                </v-row>
+
+                <v-row v-if="tab.monitor">
+                    <!-- <stats-view /> -->
+                </v-row>
+            </v-col>
+
+            <v-col cols="12" md="4">
+                <base-material-card
+                    class="v-card-profile"
+                    avatar="https://demos.creative-tim.com/vue-material-dashboard/img/marc.aba54d65.jpg"
+                >
+                    <v-card-text class="text-center">
+                        <h6 class="display-1 mb-1 grey--text">
+                            CEO / CO-FOUNDER
+                        </h6>
+
+                        <h4 class="display-2 font-weight-light mb-3 black--text">
+                            Alec Thompson
+                        </h4>
+
+                        <p class="font-weight-light grey--text">
+                            Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                        </p>
+
+                        <v-btn color="success" rounded class="mr-0">
+                            Follow
+                        </v-btn>
+                    </v-card-text>
+                </base-material-card>
             </v-col>
         </v-row>
-
     </v-container>
 </template>
 
 <script>
 export default {
-    data: () => ({
-        tab: {
-            monitor: 'secondary',
-            pools: '',
-            stats: '',
-        },
-        menu: false,
-        timelines: [
-            {
-                chip: 'Waiting for an order...',
-                color: 'success',
-                icon: 'mdi-clock-outline',
-                text: `Nito Cloud is the fastest and easiest way to "elaborately" anonymize your Bitcoin Cash (BCH); either while you're on-the-go (from your preferred Android or iOS wallet) OR from your home PC (using the Chrome or Brave web browser).`,
-                action: 'success',
-                actionIcon: 'mdi-rotate-orbit',
-                actions: [
-                    'Create a NEW transaction',
-                    'Learn more about Nito Cloud',
-                ],
+    data: () => {
+        return {
+            tab: {
+                all: 'secondary',
+                deposit: '',
+                stats: '',
             },
-        ],
-    }),
+        }
+    },
     methods: {
         /**
          * Toggle Tab
@@ -147,7 +175,3 @@ export default {
     },
 }
 </script>
-
-<style lang="sass" scoped>
-//
-</style>

@@ -4,7 +4,7 @@
         <v-btn-toggle>
             <v-btn :color="tab.stats" @click="toggle('stats')">Statistics</v-btn>
             <v-btn :color="tab.pools" @click="toggle('pools')">Pools</v-btn>
-            <v-btn :color="tab.monitor" @click="toggle('monitor')">Monitor</v-btn>
+            <v-btn :color="tab.monitor" @click="toggle('monitor')">Security</v-btn>
         </v-btn-toggle>
 
         <v-row v-if="tab.monitor">

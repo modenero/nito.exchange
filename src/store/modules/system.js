@@ -71,6 +71,10 @@ const state = {
      */
     version: null,
 
+    barColor: 'rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)',
+    barImage: require('@/assets/sidebar-04.jpg'),
+    drawer: null,
+
 }
 
 /* Getters. */
@@ -91,6 +95,14 @@ const actions = {
 
 /* Mutations. */
 const mutations = {
+    SET_BAR_IMAGE (state, payload) {
+        state.barImage = payload
+        console.log('SET_BAR_IMAGE (state):', payload, state)
+    },
+    SET_DRAWER (state, payload) {
+        state.drawer = payload
+        console.log('SET_DRAWER (state):', payload, state)
+    },
     setError,
     setFlags,
     setLocale,

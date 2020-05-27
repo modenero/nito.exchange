@@ -4,7 +4,7 @@
         <v-btn-toggle>
             <v-btn :color="tab.stats" @click="toggle('stats')">Statistics</v-btn>
             <v-btn :color="tab.pools" @click="toggle('pools')">Pools</v-btn>
-            <v-btn :color="tab.monitor" @click="toggle('monitor')">Monitor</v-btn>
+            <v-btn :color="tab.monitor" @click="toggle('monitor')">Security</v-btn>
         </v-btn-toggle>
 
         <v-row v-if="tab.monitor">
@@ -24,9 +24,9 @@
 
 <script>
 /* Import components. */
-// import MonitorView from './cashshuffle/Monitor'
-// import PoolsView from './cashshuffle/Pools'
-import StatsView from './cashshuffle/Stats'
+// import MonitorView from './cashfusion/Monitor'
+// import PoolsView from './cashfusion/Pools'
+import StatsView from './cashfusion/Stats'
 
 export default {
     components: {
