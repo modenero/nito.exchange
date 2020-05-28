@@ -3,7 +3,7 @@
         <Charts />
 
         <v-row>
-            <v-col class="ml-auto mr-auto" md="8">
+            <v-col class="ml-auto mr-auto" sm="8">
                 <base-material-alert
                     color="error"
                     dark

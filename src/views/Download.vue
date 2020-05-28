@@ -2,7 +2,7 @@
     <v-container id="user-profile" fluid tag="section">
 
         <v-row justify="center">
-            <v-col cols="12" md="8">
+            <v-col cols="12" sm="8">
                 <base-material-card>
                     <template v-slot:heading>
                         <div class="display-2 font-weight-light">
@@ -17,35 +17,35 @@
                     <v-form>
                         <v-container class="py-0">
                             <v-row>
-                                <v-col cols="12" md="4">
+                                <v-col cols="12" sm="4">
                                     <v-text-field
                                         label="Company (disabled)"
                                         disabled
                                     />
                                 </v-col>
 
-                                <v-col cols="12" md="4">
+                                <v-col cols="12" sm="4">
                                     <v-text-field
                                         class="purple-input"
                                         label="User Name"
                                     />
                                 </v-col>
 
-                                <v-col cols="12" md="4">
+                                <v-col cols="12" sm="4">
                                     <v-text-field
                                         label="Email Address"
                                         class="purple-input"
                                     />
                                 </v-col>
 
-                                <v-col cols="12" md="6">
+                                <v-col cols="12" sm="6">
                                     <v-text-field
                                         label="First Name"
                                         class="purple-input"
                                     />
                                 </v-col>
 
-                                <v-col cols="12" md="6">
+                                <v-col cols="12" sm="6">
                                     <v-text-field
                                         label="Last Name"
                                         class="purple-input"
@@ -59,21 +59,21 @@
                                     />
                                 </v-col>
 
-                                <v-col cols="12" md="4">
+                                <v-col cols="12" sm="4">
                                     <v-text-field
                                         label="City"
                                         class="purple-input"
                                     />
                                 </v-col>
 
-                                <v-col cols="12" md="4">
+                                <v-col cols="12" sm="4">
                                     <v-text-field
                                         label="Country"
                                         class="purple-input"
                                     />
                                 </v-col>
 
-                                <v-col cols="12" md="4">
+                                <v-col cols="12" sm="4">
                                     <v-text-field
                                         class="purple-input"
                                         label="Postal Code"
@@ -100,7 +100,7 @@
                 </base-material-card>
             </v-col>
 
-            <v-col cols="12" md="4">
+            <v-col cols="12" sm="4">
                 <base-material-card
                     class="v-card-profile"
                     :avatar="require('@/assets/avatar.png')"

@@ -1,12 +1,12 @@
 <template>
-    <base-material-card color="secondary" class="px-5 py-3">
+    <base-material-card color="primary">
         <template v-slot:heading>
             <div class="display-2 font-weight-light">
-                Privacy Statistics
+                My Recent Sessions
             </div>
 
             <div class="subtitle-1 font-weight-light">
-                New employees on 15th September, 2016
+                Your most active sessions are listed first.
             </div>
         </template>
 
@@ -34,59 +34,59 @@ export default {
         this.headers = [
             {
                 sortable: false,
-                text: 'Name',
+                text: 'Session Label',
                 value: 'name',
             },
             {
                 sortable: false,
-                text: 'Salary',
-                value: 'salary',
+                text: 'Value',
+                value: 'amount',
                 align: 'center',
             },
             {
                 sortable: false,
-                text: 'Country',
-                value: 'country',
+                text: 'Shuffles | Fusions',
+                value: 'numXchg',
                 align: 'center',
             },
             {
                 sortable: false,
-                text: 'City',
-                value: 'city',
-                align: 'center',
+                text: 'Last Updated',
+                value: 'timestamp',
+                align: 'right',
             },
         ]
 
         this.items = [
             {
-                name: 'Shuffles',
-                country: 'Niger',
-                city: 'Oud-Tunrhout',
-                salary: '$35,738',
+                name: 'Summer Fun',
+                amount: '$35,738',
+                numXchg: '8 | 2',
+                timestamp: '3 minutes ago',
             },
             {
-                name: 'Minerva Hooper',
-                country: 'Curaçao',
-                city: 'Sinaai-Waas',
-                salary: '$23,738',
+                name: 'Misc',
+                amount: '$3,738',
+                numXchg: '9 | 3',
+                timestamp: '3 hours ago',
             },
             {
-                name: 'Sage Rodriguez',
-                country: 'Netherlands',
-                city: 'Overland Park',
-                salary: '$56,142',
+                name: 'Work Stuff',
+                amount: '$6,142',
+                numXchg: '5 | 1',
+                timestamp: '19 hours ago',
             },
             {
-                name: 'Philip Chanley',
-                country: 'Korea, South',
-                city: 'Gloucester',
-                salary: '$38,735',
+                name: 'Personal Expenses',
+                amount: '$8,735',
+                numXchg: '7 | 2',
+                timestamp: '2 days ago',
             },
             {
-                name: 'Doris Greene',
-                country: 'Malawi',
-                city: 'Feldkirchen in Kārnten',
-                salary: '$63,542',
+                name: 'My First Session',
+                amount: '$542',
+                numXchg: '5 | 1',
+                timestamp: '3 days ago',
             },
         ]
 

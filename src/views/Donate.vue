@@ -1,7 +1,7 @@
 <template>
     <v-container id="canary" fluid tag="section">
         <v-row justify="center">
-            <v-col cols="12" md="8">
+            <v-col cols="12" sm="8">
                 <base-material-card color="primary">
                     <template v-slot:heading>
                         <div class="display-3 font-weight-light">

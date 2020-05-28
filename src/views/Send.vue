@@ -8,7 +8,7 @@
         </v-btn-toggle>
 
         <v-row justify="center">
-            <v-col cols="12" md="7">
+            <v-col cols="12" sm="7">
                 <v-row v-if="tab.all">
 
                     <base-material-card>
@@ -25,35 +25,35 @@
                         <v-form>
                             <v-container class="py-0">
                                 <v-row>
-                                    <v-col cols="12" md="4">
+                                    <v-col cols="12" sm="4">
                                         <v-text-field
                                             label="Company (disabled)"
                                             disabled
                                         />
                                     </v-col>
 
-                                    <v-col cols="12" md="4">
+                                    <v-col cols="12" sm="4">
                                         <v-text-field
                                             class="purple-input"
                                             label="User Name"
                                         />
                                     </v-col>
 
-                                    <v-col cols="12" md="4">
+                                    <v-col cols="12" sm="4">
                                         <v-text-field
                                             label="Email Address"
                                             class="purple-input"
                                         />
                                     </v-col>
 
-                                    <v-col cols="12" md="6">
+                                    <v-col cols="12" sm="6">
                                         <v-text-field
                                             label="First Name"
                                             class="purple-input"
                                         />
                                     </v-col>
 
-                                    <v-col cols="12" md="6">
+                                    <v-col cols="12" sm="6">
                                         <v-text-field
                                             label="Last Name"
                                             class="purple-input"
@@ -67,21 +67,21 @@
                                         />
                                     </v-col>
 
-                                    <v-col cols="12" md="4">
+                                    <v-col cols="12" sm="4">
                                         <v-text-field
                                             label="City"
                                             class="purple-input"
                                         />
                                     </v-col>
 
-                                    <v-col cols="12" md="4">
+                                    <v-col cols="12" sm="4">
                                         <v-text-field
                                             label="Country"
                                             class="purple-input"
                                         />
                                     </v-col>
 
-                                    <v-col cols="12" md="4">
+                                    <v-col cols="12" sm="4">
                                         <v-text-field
                                             class="purple-input"
                                             label="Postal Code"
@@ -192,7 +192,7 @@
 
                                 <v-col
                                   cols="12"
-                                  md="6"
+                                  sm="6"
                                 >
                                   <v-card-text>
                                     <div
@@ -248,7 +248,7 @@
                 </v-row>
             </v-col>
 
-            <v-col cols="12" md="5">
+            <v-col cols="12" sm="5">
                 <base-material-card
                     class="v-card-profile"
                     avatar="https://demos.creative-tim.com/vue-material-dashboard/img/marc.aba54d65.jpg"

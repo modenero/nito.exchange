@@ -3,7 +3,7 @@
         <base-v-component heading="Grid System" link="components/grid" />
 
         <v-row>
-            <v-col class="ml-auto mr-auto" md="8">
+            <v-col class="ml-auto mr-auto" sm="8">
                 <base-material-alert
                     color="error"
                     dark
@@ -62,7 +62,7 @@
                     class="pb-0 pl-3 mt-5"
                 />
 
-                <v-col md="3" class="pt-0">
+                <v-col sm="3" class="pt-0">
                     <v-card class="mt-0">
                         <v-card-text class="red--text text--darken-4">
                             col-md-3
@@ -77,7 +77,7 @@
                     v-for="n in 2"
                     :key="`offset-${n}`"
                     class="ml-auto mr-auto"
-                    md="4"
+                    sm="4"
                 >
                     <v-card class="mt-0">
                         <v-card-text class="red--text text--darken-4">
@@ -88,7 +88,7 @@
             </v-row>
 
             <v-row class="text-center mb-12">
-                <v-col class="ml-auto mr-auto" md="6">
+                <v-col class="ml-auto mr-auto" sm="6">
                     <v-card class="mt-0">
                         <v-card-text class="red--text text--darken-4">
                             col-md-6 ml-auto mr-auto
@@ -108,7 +108,7 @@
                     <v-card>
                         <v-container fluid>
                             <v-row>
-                                <v-col cols="12" md="6">
+                                <v-col cols="12" sm="6">
                                     <paragraph-heading>Some Title Here</paragraph-heading>
 
                                     <v-card-text class="font-weight-light">
@@ -116,7 +116,7 @@
                                     </v-card-text>
                                 </v-col>
 
-                                <v-col cols="12" md="6">
+                                <v-col cols="12" sm="6">
                                     <paragraph-heading>Another Title Here</paragraph-heading>
 
                                     <v-card-text class="font-weight-light">
@@ -124,7 +124,7 @@
                                     </v-card-text>
                                 </v-col>
 
-                                <v-col cols="12" md="4">
+                                <v-col cols="12" sm="4">
                                     <paragraph-heading>Some Title Here</paragraph-heading>
 
                                     <v-card-text class="font-weight-light">
@@ -132,7 +132,7 @@
                                     </v-card-text>
                                 </v-col>
 
-                                <v-col cols="12" md="4">
+                                <v-col cols="12" sm="4">
                                     <paragraph-heading>Another Title Here</paragraph-heading>
 
                                     <v-card-text class="font-weight-light">
@@ -140,7 +140,7 @@
                                     </v-card-text>
                                 </v-col>
 
-                                <v-col cols="12" md="4">
+                                <v-col cols="12" sm="4">
                                     <paragraph-heading>Another Title Here</paragraph-heading>
 
                                     <v-card-text class="font-weight-light">
@@ -148,7 +148,7 @@
                                     </v-card-text>
                                 </v-col>
 
-                                <v-col cols="12" md="4">
+                                <v-col cols="12" sm="4">
                                     <paragraph-heading>Some Title Here</paragraph-heading>
 
                                     <v-card-text class="font-weight-light">
@@ -156,7 +156,7 @@
                                     </v-card-text>
                                 </v-col>
 
-                                <v-col cols="12" md="8">
+                                <v-col cols="12" sm="8">
                                     <paragraph-heading>Another Title Here</paragraph-heading>
 
                                     <v-card-text class="font-weight-light">

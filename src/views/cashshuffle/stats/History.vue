@@ -1,6 +1,6 @@
 <template>
     <v-row>
-        <v-col cols="12" md="6">
+        <v-col cols="12" sm="6">
             <base-material-chart-card
                 :data="volumeChart.data"
                 :options="volumeChart.options"
@@ -34,7 +34,7 @@
             </base-material-chart-card>
         </v-col>
 
-        <v-col cols="12" md="6">
+        <v-col cols="12" sm="6">
             <base-material-chart-card
                 :data="valueChart.data"
                 :options="valueChart.options"

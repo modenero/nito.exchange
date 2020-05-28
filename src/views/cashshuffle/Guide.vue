@@ -18,7 +18,7 @@
                     <v-card>
                         <v-container fluid>
                             <v-row>
-                                <v-col cols="12" md="6">
+                                <v-col cols="12" sm="6">
                                     <paragraph-heading>Some Title Here</paragraph-heading>
 
                                     <v-card-text class="font-weight-light">
@@ -26,7 +26,7 @@
                                     </v-card-text>
                                 </v-col>
 
-                                <v-col cols="12" md="6">
+                                <v-col cols="12" sm="6">
                                     <paragraph-heading>Another Title Here</paragraph-heading>
 
                                     <v-card-text class="font-weight-light">
@@ -34,7 +34,7 @@
                                     </v-card-text>
                                 </v-col>
 
-                                <v-col cols="12" md="4">
+                                <v-col cols="12" sm="4">
                                     <paragraph-heading>Some Title Here</paragraph-heading>
 
                                     <v-card-text class="font-weight-light">
@@ -42,7 +42,7 @@
                                     </v-card-text>
                                 </v-col>
 
-                                <v-col cols="12" md="4">
+                                <v-col cols="12" sm="4">
                                     <paragraph-heading>Another Title Here</paragraph-heading>
 
                                     <v-card-text class="font-weight-light">
@@ -50,7 +50,7 @@
                                     </v-card-text>
                                 </v-col>
 
-                                <v-col cols="12" md="4">
+                                <v-col cols="12" sm="4">
                                     <paragraph-heading>Another Title Here</paragraph-heading>
 
                                     <v-card-text class="font-weight-light">
@@ -58,7 +58,7 @@
                                     </v-card-text>
                                 </v-col>
 
-                                <v-col cols="12" md="4">
+                                <v-col cols="12" sm="4">
                                     <paragraph-heading>Some Title Here</paragraph-heading>
 
                                     <v-card-text class="font-weight-light">
@@ -66,7 +66,7 @@
                                     </v-card-text>
                                 </v-col>
 
-                                <v-col cols="12" md="8">
+                                <v-col cols="12" sm="8">
                                     <paragraph-heading>Another Title Here</paragraph-heading>
 
                                     <v-card-text class="font-weight-light">
