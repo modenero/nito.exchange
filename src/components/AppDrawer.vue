@@ -2,10 +2,10 @@
     <v-navigation-drawer
         id="core-navigation-drawer"
         v-model="drawer"
-        :dark="barColor !== 'rgba(228, 226, 226, 1), rgba(255, 255, 255, 0.7)'"
+        :dark="getBarColor !== 'rgba(228, 226, 226, 1), rgba(255, 255, 255, 0.7)'"
         :expand-on-hover="expandOnHover"
         :right="$vuetify.rtl"
-        :src="barImage"
+        :src="getBarImage"
         mobile-break-point="960"
         app
         width="260"
@@ -13,7 +13,7 @@
     >
         <template v-slot:img="props">
             <v-img
-                :gradient="`to bottom, ${barColor}`"
+                :gradient="`to bottom, ${getBarColor}`"
                 v-bind="props"
             />
         </template>
@@ -77,10 +77,8 @@
 </template>
 
 <script>
-// Utilities
-import {
-    mapState,
-} from 'vuex'
+/* Initialize vuex. */
+import { mapGetters } from 'vuex'
 
 export default {
     name: 'DashboardCoreDrawer',
@@ -133,7 +131,11 @@ export default {
     }),
 
     computed: {
-        ...mapState(['barColor', 'barImage']),
+        ...mapGetters([
+            'getBarColor',
+            'getBarImage',
+        ]),
+
         drawer: {
             get () {
                 return this.$store.state.drawer
@@ -142,9 +144,11 @@ export default {
                 this.$store.commit('SET_DRAWER', val)
             },
         },
+
         computedItems () {
             return this.items.map(this.mapItem)
         },
+
         profile () {
             return {
                 avatar: true,
@@ -161,6 +165,12 @@ export default {
                 title: this.$t(item.title),
             }
         },
+    },
+    created: function () {
+        //
+    },
+    mounted: function () {
+        // 
     },
 }
 </script>

@@ -5,13 +5,17 @@
                 <base-material-card color="primary">
                     <template v-slot:heading>
                         <div class="display-3 font-weight-light">
-                            Donate <v-icon size="36">mdi-heart</v-icon> to Cause Cash
+                            Donating Your <v-icon size="36">mdi-heart</v-icon> Causes Cash
                         </div>
 
                         <div class="subtitle-1 font-weight-light">
-                            Your contribution greatly helps to support the continued growth of our FREE services.
+                            Consider supporting this project and growing a nascent privacy community.
                         </div>
                     </template>
+
+                    <p class="notice">
+                        Your contribution greatly helps to support the continued growth of our FREE (as in beer) community services.
+                    </p>
 
                     <p class="notice">
                         <a href="https://explorer.bitcoin.com/bch/address/bitcoincash:qqdvfkqthv4vglvyffu4k2u4xx4yy0neauz9cn40p2" target="_blank">

@@ -10,10 +10,10 @@
 <script>
 export default {
     components: {
-        AppBar: () => import('./components/AppBar'),
-        AppDrawer: () => import('./components/AppDrawer'),
-        AppInfo: () => import('./components/AppInfo'),
-        AppView: () => import('./components/AppView'),
+        AppBar: () => import('@/components/AppBar'),
+        AppDrawer: () => import('@/components/AppDrawer'),
+        AppInfo: () => import('@/components/AppInfo'),
+        AppView: () => import('@/components/AppView'),
     },
 
     data: () => ({

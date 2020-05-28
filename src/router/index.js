@@ -65,6 +65,11 @@ export default new Router({
                     component: () => import('@/views/About'),
                 },
                 {
+                    name: 'Download',
+                    path: 'download',
+                    component: () => import('@/views/Download'),
+                },
+                {
                     name: 'Need Help?',
                     path: 'help',
                     component: () => import('@/views/Help'),

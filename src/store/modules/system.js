@@ -72,14 +72,23 @@ const state = {
     version: null,
 
     barColor: 'rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)',
-    // barImage: require('@/assets/sidebar-04.jpg'),
-    barImage: 'https://i.imgur.com/9hlHSRM.jpg',
+    barImage: require('@/assets/sidebar-04.jpg'),
     drawer: null,
 
 }
 
 /* Getters. */
 const getters = {
+    getBarColor: () => {
+        return state.barColor
+    },
+    getBarImage: () => {
+        return state.barImage
+    },
+    getDrawer: () => {
+        return state.drawer
+    },
+
     getFlags,
     getLocale,
     getNotices,
@@ -97,14 +106,12 @@ const actions = {
 /* Mutations. */
 const mutations = {
     SET_BAR_IMAGE (state, payload) {
-        // state.barImage = payload
-        state.barImage = 'https://i.imgur.com/9hlHSRM.jpg'
-        console.log('SET_BAR_IMAGE (state):', payload, state)
+        state.barImage = payload
     },
     SET_DRAWER (state, payload) {
         state.drawer = payload
-        console.log('SET_DRAWER (state):', payload, state)
     },
+
     setError,
     setFlags,
     setLocale,

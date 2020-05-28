@@ -167,6 +167,8 @@ export default {
                 return 'recycle-variant'
             case '/donate':
                 return 'charity'
+            case '/download':
+                return 'cloud-download-outline'
             case '/faq':
                 return 'frequently-asked-questions'
             case '/help':
