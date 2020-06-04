@@ -157,14 +157,17 @@ export default {
             case '/':
                 return 'view-dashboard'
             case '/about':
-                // return 'file-document'
                 return 'domain'
+            case '/blank':
+                return 'help-circle-outline'
             case '/canary':
                 return 'gavel'
             case '/cashfusion':
                 return 'electron-framework'
             case '/cashshuffle':
                 return 'recycle-variant'
+            case '/coming-soon':
+                return 'sign-real-estate'
             case '/donate':
                 return 'charity'
             case '/download':

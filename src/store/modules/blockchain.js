@@ -1,6 +1,3 @@
-/* Import libraries. */
-// import telr from '../../api/telr'
-
 /* Import modules (getters). */
 // import getAccountBalance from './blockchain/getters/getAccountBalance'
 // import getConn from './blockchain/getters/getConn'

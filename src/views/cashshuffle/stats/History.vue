@@ -71,23 +71,27 @@
 </template>
 
 <script>
+/* Initialize vuex. */
+import { mapGetters } from 'vuex'
+
 /* Import modules. */
 import moment from 'moment'
 import numeral from 'numeral'
-import superagent from 'superagent'
 
 export default {
     data: () => {
         return {
-            bitbox: null,
-
-            activity: null,
+            // activity: null,
             valueChart: null,
             volumeChart: null,
             updatedAt: null,
         }
     },
     computed: {
+        ...mapGetters('cloud', [
+            'getStats',
+        ]),
+
         displayLastUpdate() {
             if (this.updatedAt) {
                 return `last updated ${moment.unix(this.updatedAt).fromNow()}`
@@ -97,21 +101,6 @@ export default {
         },
     },
     methods: {
-        /**
-         * Initialize BITBOX
-         */
-        initBitbox() {
-            console.info('Initializing BITBOX..')
-
-            try {
-                /* Initialize BITBOX. */
-                // this.bitbox = new BITBOX()
-                this.bitbox = new window.BITBOX()
-            } catch (err) {
-                console.error(err)
-            }
-        },
-
         formatValue(_value) {
             const formatted = `${(_value / 100000000).toFixed(4)} BCH`
 
@@ -119,7 +108,7 @@ export default {
         },
 
         getWeekStats(_weeksAgo) {
-            const data = this.activity.data
+            const data = this.getStats.shuffle.activity
             // console.log('HISTORICAL DATA:', data)
 
             /* Validate data. */
@@ -151,6 +140,10 @@ export default {
                     (block.timestamp < weekEnd.unix())
             })
             // console.log('HISTORICAL DATA (curWeek):', curWeek)
+
+            if (curWeek.length === 0) {
+                return null
+            }
 
             const eventsNum = curWeek.reduce((acc, block) => {
                 const numTxs = block.txs.length
@@ -192,6 +185,9 @@ export default {
          * Parse (Activity) Data
          */
         async parseData() {
+            /* Set six months (in blocks). */
+            // const sixMosBlks = 25920
+
             /**
              * Delay (Execution)
              */
@@ -211,6 +207,10 @@ export default {
 
             for (let i = 0; i < 8; i++) {
                 const stats = this.getWeekStats(i)
+
+                if (!stats) {
+                    break
+                }
 
                 this.volumeChart.data.labels.unshift(stats.label)
                 this.volumeChart.data.series[0].unshift(stats.eventsNum)
@@ -235,6 +235,10 @@ export default {
 
             for (let i = 0; i < 8; i++) {
                 const stats = this.getWeekStats(i)
+
+                if (!stats) {
+                    break
+                }
 
                 this.valueChart.data.labels.unshift(stats.label)
                 this.valueChart.data.series[0].unshift(stats.eventsVal)
@@ -308,31 +312,33 @@ export default {
             ],
         }
 
-        /* Initialize BITBOX. */
-        this.initBitbox()
-
-        /* Set six months (in blocks). */
-        const sixMosBlks = 25920
-
         /* Initialize start key. */
-        const startKey = await this.bitbox.Blockchain.getBlockCount() - sixMosBlks
+        // const startKey = await this.bitbox.Blockchain.getBlockCount() - sixMosBlks
 
         /* Initialize activity. */
-        const activity = await superagent
-            .get(`https://cloud.nito.exchange/v1/cashshuffle/activity/${startKey}`)
-            .catch(err => console.error(err))
+        // let activity = null
+
+        /* Initialize activity. */
+        // activity = await superagent
+        //     .get(`https://cloud.nito.exchange/v1/cashshuffle/activity/${startKey}`)
+        //     .catch(err => console.error(err))
         // console.log('HISTORICAL STATS (activity):', activity)
 
-        /* Set body. */
-        const body = activity.body
+        /* Initailize body. */
+        // let body = null
+
+        /* Validate activity. */
+        // if (activity && activity.body) {
+        //     body = activity.body
+        // }
 
         /* Validate body. */
-        if (!body) {
-            return console.error('Failed to retrieve CashShuffle activity.')
-        }
+        // if (!body) {
+        //     return console.error('Failed to retrieve CashShuffle activity.')
+        // }
 
         /* Set activity. */
-        this.activity = body
+        // this.activity = body
 
         /* Parse (activity) data. */
         this.parseData()

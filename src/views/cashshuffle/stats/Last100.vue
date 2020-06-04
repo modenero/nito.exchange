@@ -2,7 +2,7 @@
     <v-container>
         <base-material-card
             icon="mdi-rotate-orbit"
-            title="CashShuffle activity for the last 100 blocks"
+            title="Last 100 CashShuffle transactions"
             class="px-5 py-3"
         >
             <v-simple-table>
@@ -27,7 +27,7 @@
                 </thead>
 
                 <tbody>
-                    <tr v-for="shuffle of shuffleData" :key="shuffle.id">
+                    <tr v-for="shuffle of shuffleActivity" :key="shuffle.id">
                         <td>{{shuffle.id}}</td>
                         <td class="text-center">{{shuffle.txs.length}}</td>
                         <td class="text-center">
@@ -54,33 +54,48 @@
 </template>
 
 <script>
+/* Initialize vuex. */
+import { mapGetters } from 'vuex'
+
 /* Import modules. */
 import moment from 'moment'
-import superagent from 'superagent'
 
 export default {
     data: () => {
         return {
-            bitbox: null,
-
             activity: null,
         }
     },
     computed: {
-        shuffleData() {
-            if (this.activity && this.activity.data) {
-                /* Set data. */
-                const data = this.activity.data.map(dataBlk => {
-                    return {
-                        ...dataBlk,
-                        amount: this.formatValue(dataBlk.txs[0].inputs.min - 270),
-                        timeAgo: moment.unix(dataBlk.timestamp).fromNow(),
-                    }
-                })
+        ...mapGetters('cloud', [
+            'getStats',
+        ]),
 
-                /* Reverse the data. */
-                data.reverse()
-                console.log('DATA', data)
+        /**
+         * Shuffle Activity
+         */
+        shuffleActivity() {
+            if (this.getStats && this.getStats.shuffle) {
+                /* Retrieve activity. */
+                const activity = this.getStats.shuffle.activity
+
+                /* Reverse the activity. */
+                activity.reverse()
+
+                /* Initialize data. */
+                const data = []
+
+                for (let i = 0; i < 100; i++) {
+                    /* Validate activity. */
+                    if (activity[i]) {
+                        /* Add to data. */
+                        data.push({
+                            ...activity[i],
+                            amount: this.formatValue(activity[i].txs[0].inputs.min - 270),
+                            timeAgo: moment.unix(activity[i].timestamp).fromNow(),
+                        })
+                    }
+                }
 
                 /* Return data. */
                 return data
@@ -90,21 +105,6 @@ export default {
         }
     },
     methods: {
-        /**
-         * Initialize BITBOX
-         */
-        initBitbox() {
-            console.info('Initializing BITBOX..')
-
-            try {
-                /* Initialize BITBOX. */
-                // this.bitbox = new BITBOX()
-                this.bitbox = new window.BITBOX()
-            } catch (err) {
-                console.error(err)
-            }
-        },
-
         formatValue(_value) {
             const formatted = `${(_value / 100000000).toFixed(4)} BCH`
 
@@ -113,29 +113,7 @@ export default {
 
     },
     created: async function () {
-        /* Initialize BITBOX. */
-        this.initBitbox()
-
-        /* Initialize start key. */
-        const startKey = await this.bitbox.Blockchain.getBlockCount() - 100
-
-        /* Initialize activity. */
-        const activity = await superagent
-            .get(`https://cloud.nito.exchange/v1/cashshuffle/activity/${startKey}`)
-            .catch(err => console.error(err))
-        console.log('CASHSHUFFLE STATS (activity):', activity)
-
-        /* Set body. */
-        const body = activity.body
-
-        /* Validate body. */
-        if (!body) {
-            return console.error('Failed to retrieve CashShuffle activity.')
-        }
-
-        /* Set activity. */
-        this.activity = body
-
+        //
     },
 }
 </script>

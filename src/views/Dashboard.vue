@@ -149,7 +149,7 @@
                                 </v-dialog>
 
                                 <div class="mt-2">
-                                    <small class="text-danger">avg. completion is ~35 mins</small>
+                                    <small class="text-danger">avg. completion is ~15 mins</small>
                                 </div>
                             </v-col>
 
@@ -195,19 +195,19 @@
             </v-col>
 
             <v-col cols="12" sm="8">
-                <DashboardSessions />
+                <Sessions />
             </v-col>
         </v-row>
 
-        <DashboardCharts />
+        <Charts />
 
         <v-row>
             <v-col cols="12" sm="6">
-                <DashboardStats />
+                <Shuffles />
             </v-col>
 
             <v-col cols="12" sm="6">
-                <DashboardFeed />
+                <Fusions />
             </v-col>
         </v-row>
     </v-container>
@@ -216,10 +216,10 @@
 <script>
 export default {
     components: {
-        DashboardCharts: () => import('./dashboard/Charts'),
-        DashboardFeed: () => import('./dashboard/Feed'),
-        DashboardSessions: () => import('./dashboard/Sessions'),
-        DashboardStats: () => import('./dashboard/Stats'),
+        Charts: () => import('./dashboard/Charts'),
+        Fusions: () => import('./dashboard/Fusions'),
+        Sessions: () => import('./dashboard/Sessions'),
+        Shuffles: () => import('./dashboard/Shuffles'),
     },
     data: () => {
         return {

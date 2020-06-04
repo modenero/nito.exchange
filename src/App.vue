@@ -116,9 +116,14 @@
 </template>
 
 <script>
+/* Initialize vuex. */
+import { mapActions, mapGetters } from 'vuex'
+
 export default {
     data: () => {
         return {
+            bitbox: null,
+
             color: 'info',
             direction: 'top right',
             alert: false,
@@ -128,9 +133,44 @@ export default {
         }
     },
     computed: {
+        ...mapGetters('cloud', [
+            'getStats',
+        ]),
+
         parsedDirection () {
             return this.direction.split(' ')
         },
+    },
+    methods: {
+        ...mapActions('cloud', [
+            'updateStats',
+        ]),
+
+        /**
+         * Initialize BITBOX
+         */
+        initBitbox() {
+            console.info('Initializing BITBOX..')
+
+            try {
+                /* Initialize BITBOX. */
+                // this.bitbox = new BITBOX()
+                this.bitbox = new window.BITBOX()
+            } catch (err) {
+                console.error(err)
+            }
+        },
+
+    },
+    created: function () {
+        console.info('Initialize Nito Exchange...')
+
+        /* Initialize BITBOX. */
+        this.initBitbox()
+
+        // FOR DEVELOPMENT PURPOSES
+        this.updateStats()
+
     },
 }
 </script>

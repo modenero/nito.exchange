@@ -71,6 +71,7 @@ const state = {
      */
     version: null,
 
+    // FIXME: Re-factor this
     barColor: 'rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)',
     barImage: require('@/assets/sidebar-04.jpg'),
     drawer: null,

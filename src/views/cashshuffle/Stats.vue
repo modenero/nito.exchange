@@ -12,13 +12,7 @@
             </v-col>
         </v-row>
 
-        <Pools />
-
-        <v-row>
-            <v-col>
-                Take a deep dive into the individual CashShuffle transactions.
-            </v-col>
-        </v-row>
+        <hr />
 
         <Last100 />
 
@@ -28,13 +22,11 @@
 <script>
 /* Import components. */
 import History from './stats/History'
-import Pools from './stats/Pools'
 import Last100 from './stats/Last100'
 
 export default {
     components: {
         History,
-        Pools,
         Last100,
     },
     data: () => {
