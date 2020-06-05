@@ -119,6 +119,9 @@
 /* Initialize vuex. */
 import { mapActions, mapGetters } from 'vuex'
 
+/* Import modules. */
+import Nito from 'nitojs'
+
 export default {
     data: () => {
         return {
@@ -173,6 +176,10 @@ export default {
         // this.updateStats(2016) // 14 days
         this.updateStats(4320) // 30 days
         // this.updateStats(12960) // 90 days NOTE: Exceeds vuex storage limit.
+
+        // FOR DEVELOPMENT PURPOSES ONLY
+        const nito = new Nito()
+        console.log('NitoJS (status):', nito.status())
 
     },
 }

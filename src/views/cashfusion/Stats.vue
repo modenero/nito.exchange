@@ -108,7 +108,7 @@ export default {
 
                 /* Reverse the data. */
                 data.reverse()
-                console.log('DATA', data)
+                // console.log('DATA', data)
 
                 /* Return data. */
                 return data

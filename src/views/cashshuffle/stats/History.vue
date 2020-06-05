@@ -318,34 +318,6 @@ export default {
             ],
         }
 
-        /* Initialize start key. */
-        // const startKey = await this.bitbox.Blockchain.getBlockCount() - sixMosBlks
-
-        /* Initialize activity. */
-        // let activity = null
-
-        /* Initialize activity. */
-        // activity = await superagent
-        //     .get(`https://cloud.nito.exchange/v1/cashshuffle/activity/${startKey}`)
-        //     .catch(err => console.error(err))
-        // console.log('HISTORICAL STATS (activity):', activity)
-
-        /* Initailize body. */
-        // let body = null
-
-        /* Validate activity. */
-        // if (activity && activity.body) {
-        //     body = activity.body
-        // }
-
-        /* Validate body. */
-        // if (!body) {
-        //     return console.error('Failed to retrieve CashShuffle activity.')
-        // }
-
-        /* Set activity. */
-        // this.activity = body
-
         /* Parse (activity) data. */
         this.parseData()
     },

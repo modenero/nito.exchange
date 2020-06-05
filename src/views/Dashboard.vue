@@ -105,7 +105,7 @@
                                 </v-dialog>
 
                                 <div class="mt-2">
-                                    <small color="danger">avg. completion is &lt;1 min</small>
+                                    <small color="danger">average time &lt;1 min</small>
                                 </div>
                             </v-col>
 
@@ -149,7 +149,7 @@
                                 </v-dialog>
 
                                 <div class="mt-2">
-                                    <small class="text-danger">avg. completion is ~15 mins</small>
+                                    <small class="text-danger">average time ~15 mins</small>
                                 </div>
                             </v-col>
 
@@ -160,15 +160,29 @@
 
             <v-col cols="12" sm="6">
                 <v-carousel cycle height="315" hide-delimiter-background show-arrows-on-hover>
-                    <v-carousel-item v-for="(slide, i) in slides" :key="i">
-                        <v-sheet :color="colors[i]" height="100%">
+
+                    <v-carousel-item>
+                        <v-sheet color="indigo" height="100%" max-width="1">
+                            <img src="https://i.imgur.com/KLXDSIn.png" class="img-fluid" />
+                        </v-sheet>
+                    </v-carousel-item>
+
+                    <v-carousel-item>
+                        <v-sheet color="pink darken-2" height="100%">
+                            <img src="https://i.imgur.com/0ikEzMq.png" class="img-fluid" width="500" />
+                        </v-sheet>
+                    </v-carousel-item>
+
+                    <v-carousel-item>
+                        <v-sheet color="deep-purple accent-4" height="100%">
                             <v-row class="fill-height" align="center" justify="center">
                                 <div class="display-3">
-                                    {{ slide }} Slide
+                                    Hush Your Money™
                                 </div>
                             </v-row>
                         </v-sheet>
                     </v-carousel-item>
+
                 </v-carousel>
             </v-col>
         </v-row>
@@ -224,24 +238,12 @@ export default {
     data: () => {
         return {
             list: null,
-            colors: [
-              'indigo',
-              'pink darken-2',
-              'deep-purple accent-4',
-            ],
-            slides: [
-              'First',
-              'Second',
-              'Third',
-            ],
             dialog: false,
         }
     },
 
     methods: {
-        // complete (index) {
-        //     this.list[index] = !this.list[index]
-        // },
+        //
     },
     created: function () {
         this.list = {
