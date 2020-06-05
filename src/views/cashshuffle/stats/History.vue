@@ -108,6 +108,12 @@ export default {
         },
 
         getWeekStats(_weeksAgo) {
+            /* Validate stats. */
+            if (!this.getStats || !this.getStats.shuffle) {
+                return null
+            }
+
+            /* Set data. */
             const data = this.getStats.shuffle.activity
             // console.log('HISTORICAL DATA:', data)
 

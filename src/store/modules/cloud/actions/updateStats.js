@@ -5,164 +5,138 @@ import superagent from 'superagent'
 const bitbox = new window.BITBOX()
 
 /**
- * Update Stats
+ * Process Statistical Data
+ *
+ * Type: either `fusion` or `shuffle`
  */
-const updateStats = async ({ commit, getters }) => {
-// const updateStats = async ({ getters }) => {
-
-    /* Set 90 days (in blocks). */
-    // const blocksToSearch = 12960
-    const blocksToSearch = 144
-
-    /* Retrieve current stats. */
-    const currentStats = getters.getStats
-    console.log('CURRENT STATS', currentStats)
-
-    /* Initialize activity. */
-    let activity = null
-
+const processStats = async (_type, _currentStats, _blockAge) => {
     /* Initialize body. */
     let body = null
-
-    /* Initialize block numbers. */
-    let blockNums = null
 
     /* Initialize start key. */
     let startKey = null
 
     /* Set start key. */
-    startKey = await bitbox.Blockchain.getBlockCount() - blocksToSearch
+    startKey = await bitbox.Blockchain.getBlockCount() - _blockAge
 
-    if (currentStats.shuffle.blockAge <= startKey && currentStats.shuffle.blockHeight > startKey) {
-        startKey = currentStats.shuffle.blockHeight
+    if (_currentStats && _currentStats[_type].blockAge <= startKey && _currentStats[_type].blockHeight > startKey) {
+        startKey = _currentStats[_type].blockHeight
     }
 
-    activity = await superagent
-        .get(`https://cloud.nito.exchange/v1/cashshuffle/activity/${startKey}`)
+    let target = null
+
+    if (_type === 'fusion') {
+        target = `https://cloud.nito.exchange/v1/cashfusion/activity/${startKey}`
+    } else {
+        target = `https://cloud.nito.exchange/v1/cashshuffle/activity/${startKey}`
+    }
+
+    /* Request cloud statistial data. */
+    const cloudStats = await superagent
+        .get(target)
         .catch(err => console.error(err))
-    // console.log('CASHSHUFFLE STATS (activity):', activity)
+    // console.log(`[ ${_type} ] CLOUD STATS:`, cloudStats)
 
     /* Set body. */
-    if (activity && activity.body) {
-        body = activity.body
+    if (cloudStats && cloudStats.body) {
+        body = cloudStats.body
     }
 
     /* Validate body. */
     if (!body) {
-        return console.error('Failed to retrieve CashShuffle activity.')
+        return console.error(`Failed to retrieve [ ${_type} ] activity.`)
     }
-    // console.log('UPDATED STATS (body):', body)
+    console.log(`CLOUD [ ${_type} ] STATS (body):`, body)
 
-    /* Initialize shuffle data. */
-    let shuffleData = null
+    /* Initialize activity data. */
+    let activity = null
 
-    /* Set shuffle data. */
-    if (currentStats.shuffle.activity) {
-        shuffleData = Object.assign(currentStats.shuffle.activity, body.data)
+    /* Validate current activity. */
+    if (_currentStats && _currentStats[_type].activity) {
+        /* Set current activity. */
+        activity = _currentStats[_type].activity
+
+        /* Parse new activity for duplicate(s). */
+        body.data.forEach(item => {
+            /* Search for duplicate. */
+            const dup = activity.find(el => {
+                return el.id === item.id
+            })
+
+            /* Validate duplicate. */
+            if (!dup) {
+                /* Add item to activity. */
+                activity.push(item)
+            }
+        })
     } else {
-        shuffleData = body.data
+        /* Set activity data. */
+        activity = body.data
     }
 
-    blockNums = shuffleData.map(item => {
+    /* Sort activity data. */
+    activity.sort((a, b) => {
+        return (a.id > b.id) ? 1 : -1
+    })
+
+    /* Retrieve block (height) numbers. */
+    const blockNums = activity.map(item => {
         return parseInt(item.id)
     })
     // console.log('BLOCK NUMS:', blockNums)
 
-    let shuffleBlockHeight = null
+    let blockHeight = null
 
     /* Set latest block height. */
-    if (Math.max( ...blockNums ) > currentStats.shuffle.blockHeight) {
-        shuffleBlockHeight = Math.max( ...blockNums )
+    if (_currentStats && _currentStats[_type].blockHeight >= Math.max( ...blockNums )) {
+        blockHeight = _currentStats[_type].blockHeight
     } else {
-        shuffleBlockHeight = currentStats.shuffle.blockHeight
+        blockHeight = Math.max( ...blockNums )
     }
-    // console.log('LATEST SHUFFLE BLOCK:', shuffleBlockHeight)
+    console.log(`LATEST [ ${_type} ] BLOCK:`, blockHeight)
 
     /* Set oldest block height. */
-    let shuffleBlockAge = null
+    let blockAge = null
 
-    if (Math.min( ...blockNums ) < currentStats.shuffle.blockAge) {
-        shuffleBlockAge = Math.min( ...blockNums )
+    if (_currentStats && _currentStats[_type].blockAge <= Math.min( ...blockNums )) {
+        blockAge = _currentStats[_type].blockAge
     } else {
-        shuffleBlockAge = currentStats.shuffle.blockAge
+        blockAge = Math.min( ...blockNums )
     }
-    // console.log('OLDEST SHUFFLE BLOCK:', shuffleBlockAge)
+    console.log(`OLDEST [ ${_type} ] BLOCK:`, blockAge)
 
-    /* Set start key. */
-    startKey = await bitbox.Blockchain.getBlockCount() - blocksToSearch
-
-    if (currentStats.fusion.blockAge <= startKey && currentStats.fusion.blockHeight > startKey) {
-        startKey = currentStats.fusion.blockHeight
+    /* Return activity data. */
+    return {
+        activity,
+        blockAge,
+        blockHeight,
     }
+}
 
-    activity = await superagent
-        .get(`https://cloud.nito.exchange/v1/cashfusion/activity/${startKey}`)
-        .catch(err => console.error(err))
-    // console.log('CASHFUSION STATS (activity):', activity)
+/**
+ * Update Stats
+ */
+const updateStats = async ({ commit, getters }, _blockAge) => {
+    /* Retrieve current stats. */
+    const currentStats = getters.getStats
+    console.log('CURRENT STATS', currentStats)
 
-    /* Set body. */
-    if (activity && activity.body) {
-        body = activity.body
-    }
+    /* Process CashFusion stats. */
+    const fusion = await processStats('fusion', currentStats, _blockAge)
 
-    /* Validate body. */
-    if (!body) {
-        return console.error('Failed to retrieve CashFusion activity.')
-    }
-    // console.log('UPDATED STATS (body):', body)
-
-    /* Initialize fusion data. */
-    let fusionData = null
-
-    /* Set fusion data. */
-    if (currentStats.fusion.activity) {
-        fusionData = Object.assign(currentStats.fusion.activity, body.data)
-    } else {
-        fusionData = body.data
-    }
-
-    blockNums = fusionData.map(item => {
-        return parseInt(item.id)
-    })
-    // console.log('BLOCK NUMS:', blockNums)
-
-    let fusionBlockHeight = null
-
-    /* Set latest block height. */
-    if (Math.max( ...blockNums ) > currentStats.fusion.blockHeight) {
-        fusionBlockHeight = Math.max( ...blockNums )
-    } else {
-        fusionBlockHeight = currentStats.fusion.blockHeight
-    }
-    // console.log('LATEST FUSION BLOCK:', fusionBlockHeight)
-
-    /* Set oldest block height. */
-    let fusionBlockAge = null
-
-    if (Math.min( ...blockNums ) < currentStats.fusion.blockAge) {
-        fusionBlockAge = Math.min( ...blockNums )
-    } else {
-        fusionBlockAge = currentStats.fusion.blockAge
-    }
-    // console.log('OLDEST FUSION BLOCK:', fusionBlockAge)
+    /* Process CashShuffle stats. */
+    const shuffle = await processStats('shuffle', currentStats, _blockAge)
 
     /* Build stats. */
     const updatedStats = {
-        fusion: {
-            activity: fusionData,
-            blockAge: fusionBlockAge,
-            blockHeight: fusionBlockHeight,
-        },
-        shuffle: {
-            activity: shuffleData,
-            blockAge: shuffleBlockAge,
-            blockHeight: shuffleBlockHeight,
-        },
+        fusion,
+        shuffle,
     }
 
-    // console.log('UPDATED STATS', updatedStats)
+    console.log('UPDATED STATS', updatedStats)
 
     commit('setStats', updatedStats)
+    // commit('setStats', null)
 }
 
 /* Export module. */

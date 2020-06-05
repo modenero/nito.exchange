@@ -169,7 +169,10 @@ export default {
         this.initBitbox()
 
         // FOR DEVELOPMENT PURPOSES
-        this.updateStats()
+        // this.updateStats(144) // 1 day
+        // this.updateStats(2016) // 14 days
+        this.updateStats(4320) // 30 days
+        // this.updateStats(12960) // 90 days NOTE: Exceeds vuex storage limit.
 
     },
 }
