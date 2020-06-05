@@ -67,9 +67,9 @@
         <template v-slot:append>
             <base-item
                 :item="{
-                    title: $t('causes-cash'),
+                    title: $t('need-help'),
                     icon: '',
-                    to: '/donate',
+                    to: '/help',
                 }"
             />
         </template>
@@ -170,7 +170,7 @@ export default {
         //
     },
     mounted: function () {
-        // 
+        //
     },
 }
 </script>

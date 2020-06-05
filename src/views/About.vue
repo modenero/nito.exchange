@@ -6,121 +6,80 @@
                 <base-material-card>
                     <template v-slot:heading>
                         <div class="display-2 font-weight-light">
-                            Edit Profile
+                            Hush Your Money
                         </div>
 
                         <div class="subtitle-1 font-weight-light">
-                            Complete your profile
+                            Spend Your Cash Privately. Fearlessly!
                         </div>
                     </template>
 
-                    <v-form>
-                        <v-container class="py-0">
-                            <v-row>
-                                <v-col cols="12" sm="4">
-                                    <v-text-field
-                                        label="Company (disabled)"
-                                        disabled
-                                    />
-                                </v-col>
+                    <v-container class="py-0">
+                        <v-row>
+                            <v-col cols="12">
+                                <p>
+                                    Nito Exchange is proud to be the <strong>premier, non-custodial exchange</strong> for maintaining the anonymity and fungibility of your Bitcoin Cash (BCH).
+                                </p>
 
-                                <v-col cols="12" sm="4">
-                                    <v-text-field
-                                        class="purple-input"
-                                        label="User Name"
-                                    />
-                                </v-col>
+                                <h1>Your Keys. Your Coins.</h1>
 
-                                <v-col cols="12" sm="4">
-                                    <v-text-field
-                                        label="Email Address"
-                                        class="purple-input"
-                                    />
-                                </v-col>
+                                <p>
+                                    Nito Exchange <strong>NEVER</strong> claims ownership of your private keys OR your coins.
+                                    At absolutely <strong>ANY</strong> point during your session, <strong>you maintain the ability to move your own coins.</strong>
+                                </p>
 
-                                <v-col cols="12" sm="6">
-                                    <v-text-field
-                                        label="First Name"
-                                        class="purple-input"
-                                    />
-                                </v-col>
+                                <h1>Compliance</h1>
 
-                                <v-col cols="12" sm="6">
-                                    <v-text-field
-                                        label="Last Name"
-                                        class="purple-input"
-                                    />
-                                </v-col>
+                                <p class="red--text text-center">
+                                    <em>Rest assured .. Nito Exchange will <strong>NEVER</strong> perform AML / KYC on our users.</em>
+                                </p>
 
-                                <v-col cols="12">
-                                    <v-text-field
-                                        label="Adress"
-                                        class="purple-input"
-                                    />
-                                </v-col>
+                                <p>
+                                    Nito Exchange is registered with <a href="https://www.fincen.gov/" target="_blank"><strong>FinCEN</strong></a> and complies with all financial regulations.
+                                    Nito Exchange has a strict policy <strong>NEVER</strong> to transmit coins on our client's behalf.
+                                    Our service functions <strong>SOLELY as a (xPriv) private key manager.</strong>
+                                    During CashShuffle and CashFusion sessions, we rely on the community of pool &amp; tier participants to facilitate <strong>ALL</strong> broadcasts to the blockchain.
+                                </p>
 
-                                <v-col cols="12" sm="4">
-                                    <v-text-field
-                                        label="City"
-                                        class="purple-input"
-                                    />
-                                </v-col>
+                                <h1>Legal</h1>
 
-                                <v-col cols="12" sm="4">
-                                    <v-text-field
-                                        label="Country"
-                                        class="purple-input"
-                                    />
-                                </v-col>
-
-                                <v-col cols="12" sm="4">
-                                    <v-text-field
-                                        class="purple-input"
-                                        label="Postal Code"
-                                        type="number"
-                                    />
-                                </v-col>
-
-                                <v-col cols="12">
-                                    <v-textarea
-                                        class="purple-input"
-                                        label="About Me"
-                                        value="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                                    />
-                                </v-col>
-
-                                <v-col cols="12" class="text-right">
-                                    <v-btn color="success" class="mr-0">
-                                        Update Profile
-                                    </v-btn>
-                                </v-col>
-                            </v-row>
-                        </v-container>
-                    </v-form>
+                                <p>
+                                    We encourage <strong>ALL</strong> of our users to act responsibly with their coins.
+                                    We <strong>DO NOT</strong> condone the use of "illegal" activities with our service.
+                                    We leave it up to our users to determine what constitues "illegal" activity.
+                                </p>
+                            </v-col>
+                        </v-row>
+                    </v-container>
                 </base-material-card>
             </v-col>
 
             <v-col cols="12" sm="4">
                 <base-material-card
                     class="v-card-profile"
-                    :avatar="require('@/assets/avatar.png')"
+                    :avatar="require('@/assets/modenero-avatar.png')"
                 >
                     <v-card-text class="text-center">
-                        <h6 class="display-1 mb-1 grey--text">
-                            CEO / CO-FOUNDER
-                        </h6>
-
-                        <h4 class="display-2 font-weight-light mb-3 black--text">
-                            Alec Thompson
+                        <h4 class="display-2 font-weight-light black--text main-title">
+                            Modenero
                         </h4>
-
-                        <p class="font-weight-light grey--text">
-                            Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                        <p class="sub-title">
+                            New Money Beginnings™
                         </p>
 
-                        <v-btn color="success" rounded class="mr-0">
+                        <p class="font-weight-light grey--text text-left mission">
+                            Since 2015, our mission has been to empower the 99% with the ability to grow &amp; secure their own wealth and financial security.
+                        </p>
+
+                        <h6 class="display-1 mb-1 grey--text">
+                            <a href="https://modenero.com" target="_blank" class="red--text">
+                                visit us at modenero.com
+                            </a>
+                        </h6>
+
+                        <!-- <v-btn color="success" rounded class="mr-0">
                             Follow
-                        </v-btn>
+                        </v-btn> -->
                     </v-card-text>
                 </base-material-card>
             </v-col>
@@ -142,4 +101,18 @@ export default {
 .v-card-profile
     margin-top: 80px
 
+h6
+    a
+        text-decoration: none
+
+.main-title
+    margin-top: -30px
+
+.sub-title
+    font-style: italic
+    font-size: 0.9em
+    color: rgba(120, 120, 120, 1.0)
+
+.mission
+    line-height: 25px
 </style>

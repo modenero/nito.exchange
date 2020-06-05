@@ -29,11 +29,10 @@
 
                 <v-col cols="12" sm="auto">
                     <div class="body-1 font-weight-light pt-6 pt-md-0 text-center">
-                        &copy; {{curYear}}. Made with
-                        <v-icon size="18">mdi-heart</v-icon>
-                        by
-                        <a href="https://bchplease.org" target="_blank">
-                            <strong>Bitcoin Cash Please.</strong></a>
+                        &copy; {{curYear}}.
+                        <a href="https://modenero.com" target="_blank">
+                            <strong>Modenero Corp.</strong></a>
+                        All rights reserved.
                     </div>
                 </v-col>
             </v-row>

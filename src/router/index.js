@@ -26,7 +26,6 @@ import About from '@/views/About'
 import Download from '@/views/Download'
 import Help from '@/views/Help'
 import FAQ from '@/views/FAQ'
-import Donate from '@/views/Donate'
 import Canary from '@/views/Canary'
 
 /* DEVELOPMENT ONLY */
@@ -112,11 +111,6 @@ const routes = [{
             name: 'Frequently Asked Questions',
             path: 'faq',
             component: FAQ,
-        },
-        {
-            name: 'Donation',
-            path: 'donate',
-            component: Donate,
         },
         {
             name: 'Warrant Canary',
