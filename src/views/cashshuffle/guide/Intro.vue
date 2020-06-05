@@ -40,7 +40,7 @@
                                     <v-sheet color="indigo" height="100%">
                                         <v-row class="fill-height" align="center" justify="center">
                                             <div class="display-3">
-                                                First Slide
+                                                Welcome to CashShuffle
                                             </div>
                                         </v-row>
                                     </v-sheet>
@@ -48,18 +48,13 @@
 
                                 <v-carousel-item>
                                     <v-sheet color="pink darken-2" height="100%" max-width="1">
-                                        <v-row class="fill-height" align="center" justify="center">
-                                            <img src="https://i.imgur.com/wWNiEMo.png" class="img-fluid" />
-                                        </v-row>
+                                        <img src="https://i.imgur.com/d2vQwQe.png" class="img-fluid" width="600" />
                                     </v-sheet>
                                 </v-carousel-item>
 
                                 <v-carousel-item>
                                     <v-sheet color="deep-purple accent-4" height="100%" max-width="1">
-                                        <img src="https://i.imgur.com/McX734d.png" class="img-fluid" />
-                                        <!-- <v-row> -->
-                                        <!-- <v-row class="fill-height" align="center" justify="center"> -->
-                                        <!-- </v-row> -->
+                                        <img src="https://i.imgur.com/McX734d.png" class="img-fluid" width="500" />
                                     </v-sheet>
                                 </v-carousel-item>
 

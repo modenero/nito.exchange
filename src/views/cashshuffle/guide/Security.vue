@@ -18,7 +18,7 @@
 
                             <v-card-text class="font-weight-light text-left">
                                 <p>
-                                    To ensure the effectiveness of the platform and technology, Cashshuffle has been successfully audited by Kudelski Security.
+                                    To ensure the effectiveness of the platform and technology, Cashshuffle has been successfully <a href="https://research.kudelskisecurity.com/2019/03/27/audit-of-cashshuffle/" target="_blank"><strong>audited by Kudelski Security.</strong></a>
                                 </p>
 
                                 <p>

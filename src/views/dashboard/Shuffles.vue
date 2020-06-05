@@ -1,8 +1,8 @@
 <template>
-    <base-material-card color="secondary" class="px-5 py-3">
+    <base-material-card color="indigo" class="px-5 py-3">
         <template v-slot:heading>
             <div class="display-2 font-weight-light">
-                Privacy Statistics
+                CashShuffle Spotlight
             </div>
 
             <div class="subtitle-1 font-weight-light">

@@ -22,9 +22,11 @@
                                 Every Bitcoin Cash is compatible with CashShuffle.
                             </p>
 
-                            <hr />
+                            <p>
+                                On 27th of March, the development squad of the privacy-centric protocol Cashshuffle has announced its official launch of the platform that uses the Electron Cash Wallet.
+                            </p>
 
-                            <h2>The Problem</h2>
+                            <h2>What's the Problem?</h2>
 
                             <p>
                                 One of the problems with a public, immutable ledger like the blockchain is: it’s public. All transactions from all time are out there for all to see — and analyze, perhaps to identify the parties involved and what they were doing. That’s a nightmare for both businesses and individuals who value privacy.

@@ -162,24 +162,25 @@
                 <v-carousel cycle height="315" hide-delimiter-background show-arrows-on-hover>
 
                     <v-carousel-item>
-                        <v-sheet color="indigo" height="100%" max-width="1">
-                            <img src="https://i.imgur.com/KLXDSIn.png" class="img-fluid" />
+                        <v-sheet color="indigo" height="100%">
+                            <v-row class="fill-height" align="center" justify="center">
+                                <div class="display-3">
+                                    Nito Exchange
+                                    <br />Hush Your Money™
+                                </div>
+                            </v-row>
                         </v-sheet>
                     </v-carousel-item>
 
                     <v-carousel-item>
                         <v-sheet color="pink darken-2" height="100%">
-                            <img src="https://i.imgur.com/0ikEzMq.png" class="img-fluid" width="500" />
+                            <img src="https://i.imgur.com/NGxy53Y.png" class="img-fluid" width="500" />
                         </v-sheet>
                     </v-carousel-item>
 
                     <v-carousel-item>
                         <v-sheet color="deep-purple accent-4" height="100%">
-                            <v-row class="fill-height" align="center" justify="center">
-                                <div class="display-3">
-                                    Hush Your Money™
-                                </div>
-                            </v-row>
+                            <img src="https://i.imgur.com/0ikEzMq.png" class="img-fluid" width="500" />
                         </v-sheet>
                     </v-carousel-item>
 
