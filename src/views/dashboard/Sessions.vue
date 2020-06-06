@@ -1,22 +1,24 @@
 <template>
-    <base-material-card color="primary">
-        <template v-slot:heading>
-            <div class="display-2 font-weight-light">
-                My Recent Sessions
-            </div>
+    <v-col cols="12" sm="8">
+        <base-material-card color="primary">
+            <template v-slot:heading>
+                <div class="display-2 font-weight-light">
+                    My Recent Sessions
+                </div>
 
-            <div class="subtitle-1 font-weight-light">
-                Your most active sessions are listed first.
-            </div>
-        </template>
+                <div class="subtitle-1 font-weight-light">
+                    Your most active sessions are listed first.
+                </div>
+            </template>
 
-        <v-card-text>
-            <v-data-table
-                :headers="headers"
-                :items="items"
-            />
-        </v-card-text>
-    </base-material-card>
+            <v-card-text>
+                <v-data-table
+                    :headers="headers"
+                    :items="items"
+                />
+            </v-card-text>
+        </base-material-card>
+    </v-col>
 </template>
 
 <script>
