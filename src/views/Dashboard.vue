@@ -1,51 +1,6 @@
 <template>
     <v-container id="dashboard" fluid tag="section">
-        <v-row>
-            <v-col cols="12" sm="6" lg="3">
-                <base-material-stats-card
-                    color="#4cca47"
-                    icon="mdi-currency-usd"
-                    title="BCH / USD"
-                    value="$227.79"
-                    sub-icon="mdi-chart-line"
-                    sub-icon-color="green"
-                    sub-text="+2.7% in the last 24hrs"
-                />
-            </v-col>
-
-            <v-col cols="12" sm="6" lg="3">
-                <base-material-stats-card
-                    color="blue"
-                    icon="mdi-wallet-travel"
-                    title="My Purse"
-                    value="$1,345"
-                    sub-icon="mdi-pulse"
-                    sub-text="in 4 active sesions"
-                />
-            </v-col>
-
-            <v-col cols="12" sm="6" lg="3">
-                <base-material-stats-card
-                    color="purple"
-                    icon="mdi-pulse"
-                    title="My Sessions"
-                    value="23"
-                    sub-icon="mdi-calendar"
-                    sub-text="since May 15, 2020"
-                />
-            </v-col>
-
-            <v-col cols="12" sm="6" lg="3">
-                <base-material-stats-card
-                    color="orange"
-                    icon="mdi-account-voice"
-                    title="Peers Online"
-                    value="28"
-                    sub-icon="mdi-clock"
-                    sub-text="updated 20 seconds ago"
-                />
-            </v-col>
-        </v-row>
+        <Highlights />
 
         <v-row>
             <v-col cols="12" sm="6">
@@ -159,14 +114,25 @@
             </v-col>
 
             <v-col cols="12" sm="6">
-                <v-carousel cycle height="315" hide-delimiter-background show-arrows-on-hover>
+                <v-carousel class="carousel" cycle height="315" hide-delimiter-background show-arrows-on-hover>
 
-                    <v-carousel-item>
+                    <!-- <v-carousel-item>
                         <v-sheet color="indigo" height="100%">
                             <v-row class="fill-height" align="center" justify="center">
                                 <div class="display-3">
                                     Nito Exchange
                                     <br />Hush Your Money™
+                                </div>
+                            </v-row>
+                        </v-sheet>
+                    </v-carousel-item> -->
+
+                    <v-carousel-item>
+                        <v-sheet color="indigo" height="100%" @click="openArticle('https://www.coindesk.com/coinbase-analytics-blockchain-analysis-crypto-government')">
+                            <v-row class="fill-height" align="center" justify="center">
+                                <div class="display-3">
+                                    Coinbase Offers US Feds
+                                    <br />New Crypto Surveillance Tools
                                 </div>
                             </v-row>
                         </v-sheet>
@@ -214,15 +180,15 @@
             </v-col>
         </v-row>
 
-        <Charts />
+        <!-- <Charts /> -->
 
         <v-row>
             <v-col cols="12" sm="6">
-                <Shuffles />
+                <ShuffleSpotlight />
             </v-col>
 
             <v-col cols="12" sm="6">
-                <Fusions />
+                <FusionSpotlight />
             </v-col>
         </v-row>
     </v-container>
@@ -231,10 +197,11 @@
 <script>
 export default {
     components: {
-        Charts: () => import('./dashboard/Charts'),
-        Fusions: () => import('./dashboard/Fusions'),
+        // Charts: () => import('./dashboard/Charts'),
+        FusionSpotlight: () => import('./dashboard/FusionSpotlight'),
+        Highlights: () => import('./dashboard/Highlights'),
         Sessions: () => import('./dashboard/Sessions'),
-        Shuffles: () => import('./dashboard/Shuffles'),
+        ShuffleSpotlight: () => import('./dashboard/ShuffleSpotlight'),
     },
     data: () => {
         return {
@@ -244,7 +211,9 @@ export default {
     },
 
     methods: {
-        //
+        openArticle(_url) {
+            window.open(_url)
+        },
     },
     created: function () {
         this.list = {
@@ -259,5 +228,6 @@ export default {
 
 
 <style lang="sass">
-//
+.carousel
+    cursor: pointer
 </style>
