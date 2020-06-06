@@ -24,14 +24,14 @@
 
 <script>
 /* Import components. */
-import Pools from './cashshuffle/Pools'
 import Guide from './cashshuffle/Guide'
+import Pools from './cashshuffle/Pools'
 import Stats from './cashshuffle/Stats'
 
 export default {
     components: {
-        Pools,
         Guide,
+        Pools,
         Stats,
     },
     data: () => ({

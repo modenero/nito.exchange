@@ -3,20 +3,20 @@
 
         <v-btn-toggle>
             <v-btn :color="tab.stats" @click="toggle('stats')">Statistics</v-btn>
-            <v-btn :color="tab.pools" @click="toggle('pools')">Pools</v-btn>
-            <v-btn :color="tab.monitor" @click="toggle('monitor')">Security</v-btn>
+            <v-btn :color="tab.tiers" @click="toggle('tiers')">Tiers</v-btn>
+            <v-btn :color="tab.guide" @click="toggle('guide')">Guide</v-btn>
         </v-btn-toggle>
 
-        <v-row v-if="tab.monitor">
-            <monitor-view />
+        <v-row v-if="tab.guide">
+            <Stats />
         </v-row>
 
-        <v-row v-if="tab.pools">
-            <pools-view />
+        <v-row v-if="tab.tiers">
+            <Tiers />
         </v-row>
 
         <v-row v-if="tab.stats">
-            <stats-view />
+            <Guide />
         </v-row>
 
     </v-container>
@@ -24,37 +24,22 @@
 
 <script>
 /* Import components. */
-// import MonitorView from './cashfusion/Monitor'
-// import PoolsView from './cashfusion/Pools'
-import StatsView from './cashfusion/Stats'
+import Guide from './cashfusion/Guide'
+import Tiers from './cashfusion/Tiers'
+import Stats from './cashfusion/Stats'
 
 export default {
     components: {
-        // MonitorView,
-        // PoolsView,
-        StatsView,
+        Guide,
+        Tiers,
+        Stats,
     },
     data: () => ({
         tab: {
-            monitor: '',
-            pools: '',
             stats: 'secondary',
+            tiers: '',
+            guide: '',
         },
-        menu: false,
-        timelines: [
-            {
-                chip: 'Waiting for a coin...',
-                color: 'success',
-                icon: 'mdi-clock-outline',
-                text: `CashFusion is the state-of-the-art in Bitcoin Cash privacy protocols; allowing you to specify how you want your coins returned to you.`,
-                action: 'success',
-                actionIcon: 'mdi-rotate-orbit',
-                actions: [
-                    'Start a NEW fusion',
-                    'Learn more about CashFusion',
-                ],
-            },
-        ],
     }),
     methods: {
         /**
@@ -63,8 +48,8 @@ export default {
         toggle(_tab) {
             /* Reset tabs. */
             this.tab = {
-                monitor: '',
-                pools: '',
+                guide: '',
+                tiers: '',
                 stats: '',
             }
 

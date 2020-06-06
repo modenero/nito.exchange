@@ -18,7 +18,7 @@
                     </template>
 
                     <p class="notice">
-                        As of <strong>May 26, 2020,</strong> Nito Exchange has received and complied with <strong>0 (zero)</strong> requests for information of any kind by any third parties including but not limited to government agencies.
+                        As of <strong>June 6, 2020,</strong> Nito Exchange has received and complied with <strong>0 (zero)</strong> requests for information of any kind by any third parties including but not limited to government agencies.
                         <br /><br />
                         We will renew this notice every day.
                         <br /><br />
