@@ -24,3 +24,4 @@
     * [3.1. Introduction](cloud/intro.md)
     * [3.2. Fees](cloud/fees.md)
     * [3.3. Rebates](cloud/rebates.md)
+    * [3.4. Serverless](cloud/serverless.md)

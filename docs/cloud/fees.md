@@ -1,5 +1,15 @@
 # Fees
 
+Nito Exchange has implemented a fee system that starts at FREE and goes up to 1%. This is primarily designed to protect your privacy by obfuscating the inputs and outputs of the various transactions conducted by the exchange.
+
+> TL;DR — If and when the exchange is able to "safely" collect its fee(s), it is guaranteed never to exceed 1% of your total coin value.
+
+1% of transaction amount, plus (estimated transaction) fees.
+
+0.5% is returned at the end of the 7 shuffles OR 3 fuses.
+
+0.5% is sent to Pay-It-Forward.
+
 Estimating fiat USD value @ $250.00
 
 Minimum fee amount is 10 bits (ie. 1,000 satoshis) (~$0.0025)

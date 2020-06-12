@@ -96,14 +96,14 @@ export default {
 
         this.faqs.push({
             id: 'd1f0edde-c6cb-4e69-a794-4e636146a8a1',
-            question: ``,
-            answer: ``,
+            question: `How safe are my funds on this exchange?`,
+            answer: `Since 2014, approx. $1.4bn crypto assets have been compromised or lost as a direct result of centralised exchange hacks. While many of the key centralised exchange players have strong systems in place, this still poses a significant risk to traders who have no choice but hold their assets there, as any solution to this problem has so far come at too great a sacrifice on liquidity, privacy and speed.`,
         })
 
         this.faqs.push({
             id: 'fb40d74b-23f6-4976-8898-dbf39bfb4353',
-            question: ``,
-            answer: ``,
+            question: `What if you get hacked?`,
+            answer: `Conversely, the funds traded on Nito Exchange are secured by heavily audited smart-contracts and are always accessible whether the site is live or offline. Only traders have access to their tokens and if Nito Exchange ever goes offline, you can always retrieve your assets.`,
         })
 
         this.faqs.push({

@@ -89,7 +89,7 @@ export default {
          * Update Ticker
          */
         async updateTicker() {
-            this.ticker = await Nito.getTicker('BCH')
+            this.ticker = await Nito.Markets.getTicker('BCH')
         },
 
     },
