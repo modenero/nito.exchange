@@ -170,11 +170,16 @@ export default {
             return formatted
         },
 
-        displayFiat(_value) {
-            const formatted = numeral(_value * this.ticker / 10000000000).
-                format('$0,0[.]00[00]')
+        displayFiat(_satoshis) {
+            /* Set value. */
+            const value = (_satoshis / 10000000000) * this.ticker
 
-            return formatted
+            /* Return formatted value. */
+            if (value < 1) {
+                return numeral(value).format('$0,0.00[00]')
+            } else {
+                return numeral(value).format('$0,0.00')
+            }
         },
 
         /**
@@ -201,56 +206,56 @@ export default {
         /* Add 100 bits. */
         this.pools.push({
             id: '10000',
-            title: `100 Bits | ${this.displayFiat(10000)}`,
+            title: `< 100 Bits | ~${this.displayFiat(5500)}`,
             color: '#5E75C2',
         })
 
         /* Add 1,000 bits. */
         this.pools.push({
             id: '100000',
-            title: `1,000 Bits | ${this.displayFiat(100000)}`,
+            title: `100 - 1K Bits | ~${this.displayFiat(55000)}`,
             color: '#BB77C4',
         })
 
         /* Add 10K bits. */
         this.pools.push({
             id: '1000000',
-            title: `10K Bits | ${this.displayFiat(1000000)}`,
+            title: `1K - 10K Bits | ~${this.displayFiat(550000)}`,
             color: '#FD7EAC',
         })
 
         /* Add 0.1 BCH. */
         this.pools.push({
             id: '10000000',
-            title: `0.1 BCH | ${this.displayFiat(10000000)}`,
+            title: `0.01 - 0.1 BCH | ~${this.displayFiat(5500000)}`,
             color: '#FF9987',
         })
 
         /* Add 1 BCH. */
         this.pools.push({
             id: '100000000',
-            title: `1 BCH | ${this.displayFiat(100000000)}`,
+            title: `0.1 - 1 BCH | ~${this.displayFiat(55000000)}`,
             color: '#FFC66A',
         })
 
         /* Add 10 BCH. */
         this.pools.push({
             id: '1000000000',
-            title: `10 BCH | ${this.displayFiat(1000000000)}`,
+            title: `1 - 10 BCH | ~${this.displayFiat(550000000)}`,
             color: '#F9F871',
         })
 
         /* Add 100 BCH. */
         this.pools.push({
             id: '10000000000',
-            title: `100 BCH | ${this.displayFiat(10000000000)}`,
+            title: `10 - 100 BCH | ~${this.displayFiat(5500000000)}`,
             color: '#C05864',
         })
 
         /* Add 1,000 BCH. */
         this.pools.push({
             id: '100000000000',
-            title: `1,000 BCH | ${this.displayFiat(100000000000)}`,
+            title: `100 - 1K BCH | ~${this.displayFiat(55000000000)}`,
             color: '#D2A517',
         })
 

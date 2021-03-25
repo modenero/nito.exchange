@@ -7,7 +7,7 @@
             <v-btn :color="tab.guide" @click="toggle('guide')">Guide</v-btn>
         </v-btn-toggle>
 
-        <v-row v-if="tab.guide">
+        <v-row v-if="tab.stats">
             <Stats />
         </v-row>
 
@@ -15,7 +15,7 @@
             <Tiers />
         </v-row>
 
-        <v-row v-if="tab.stats">
+        <v-row v-if="tab.guide">
             <Guide />
         </v-row>
 

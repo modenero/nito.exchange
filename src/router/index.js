@@ -15,7 +15,7 @@ import Dashboard from '@/views/Dashboard'
 // import History from '@/views/History'
 
 /* Settings */
-// import Settings from '@/views/Settings'
+import Settings from '@/views/Settings'
 
 /* Activity Monitor */
 import CashShuffle from '@/views/CashShuffle'
@@ -75,8 +75,7 @@ const routes = [{
         {
             name: 'Settings',
             path: 'settings',
-            // component: Settings,
-            component: ComingSoon,
+            component: Settings,
         },
 
         /* Activity Monitor */

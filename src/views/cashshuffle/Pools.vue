@@ -9,82 +9,34 @@
             <v-simple-table>
                 <thead>
                     <tr>
-                        <th class="primary--text">
-                            ID
+                        <th class="text-center primary--text">
+                            Pool Id
                         </th>
-                        <th class="primary--text">
-                            Name
+                        <th class="text-center primary--text">
+                            Minimum BCH
                         </th>
-                        <th class="primary--text">
-                            Country
+                        <th class="text-center primary--text">
+                            Minimum Fiat
                         </th>
-                        <th class="primary--text">
-                            City
-                        </th>
-                        <th class="text-right primary--text">
-                            Salary
+                        <th class="text-center primary--text">
+                            Current Waiting Pool
                         </th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Dakota Rice</td>
-                        <td>Niger</td>
-                        <td>Oud-Turnhout</td>
-                        <td class="text-right">
-                            $36,738
+                    <tr v-for="pool of pool.data" :key="pool.poolid">
+                        <td class="text-center">
+                            {{pool.poolid}}
                         </td>
-                    </tr>
-
-                    <tr>
-                        <td>2</td>
-                        <td>Minverva Hooper</td>
-                        <td>Curaçao</td>
-                        <td>Sinaas-Waas</td>
-                        <td class="text-right">
-                            $23,789
+                        <td class="text-center">
+                            {{pool.minimumbch}}
                         </td>
-                    </tr>
-
-                    <tr>
-                        <td>3</td>
-                        <td>Sage Rodriguez</td>
-                        <td>Netherlands</td>
-                        <td>Baileux</td>
-                        <td class="text-right">
-                            $56,142
+                        <td class="text-center">
+                            {{pool.minimumfiat}}
                         </td>
-                    </tr>
-
-                    <tr>
-                        <td>4</td>
-                        <td>Philip Chaney</td>
-                        <td>Korea, South</td>
-                        <td>Overland Park</td>
-                        <td class="text-right">
-                            $38,735
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>5</td>
-                        <td>Doris Greene</td>
-                        <td>Malawi</td>
-                        <td>Feldkirchen in Kärnten</td>
-                        <td class="text-right">
-                            $63,542
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>6</td>
-                        <td>Mason Porter</td>
-                        <td>Chile</td>
-                        <td>Gloucester</td>
-                        <td class="text-right">
-                            $78,615
+                        <td class="text-center">
+                            {{pool.currentwaitingpool}}
                         </td>
                     </tr>
                 </tbody>
@@ -135,7 +87,9 @@
 import { mapActions, mapGetters } from 'vuex'
 
 /* Import modules. */
+import Nito from 'nitojs'
 import numeral from 'numeral'
+import superagent from 'superagent'
 
 export default {
     data: () => ({
@@ -150,6 +104,21 @@ export default {
         emailsSubscriptionChart: null,
 
         ticker: null,
+
+        pool: {
+            title: 'CashShuffle Pool Statistics',
+            subTitle: 'loading...',
+            name: 'shuffle.servo.cash:8080',
+            uri: 'https://shuffle.servo.cash:8080/stats',
+            columns: [
+                'Pool Id',
+                'Minimum BCH',
+                'Minimum Fiat',
+                'Current Waiting Pool'
+            ],
+            data: [],
+            connections: 0,
+        },
         pools: [],
     }),
     computed: {
@@ -164,127 +133,201 @@ export default {
             // 'createSession',
         ]),
 
-        formatValue(_value) {
-            const formatted = `${(_value / 100000000).toFixed(4)} BCH`
+        loadPool() {
+            /* Set server URI. */
+            const serverUri = this.pool.uri
 
-            return formatted
+            superagent
+                .get(serverUri)
+                .set('accept', 'json')
+                .end(async (err, data) => {
+                    if (err) {
+                        return console.error('API ERROR:', err)
+                    }
+
+                    console.log('API response:', data)
+
+                    /* Filter production pools. */
+                    const stats = data.body.pools.filter(pool => {
+                        return pool.version === 300
+                    })
+
+                    /* Sort by pool tier (amount). */
+                    stats.sort((a, b) => {
+                        return a.amount - b.amount
+                    })
+
+                    /* Set subtitle. */
+                    this.pool.subTitle = `Your current pool is [ ${this.pool.name} ] serving [ ${data.body.connections} ] active connections`
+
+                    // console.log('Stats:', stats)
+
+                    /* Clear pool data. */
+                    this.pool.data = []
+
+                    stats.forEach((pool, index) => {
+                        this.pool.data.push({
+                            poolid: `#${(index + 1)}`,
+                            minimumbch: this.formatBCH(pool.amount),
+                            minimumfiat: this.formatPrice(pool.amount),
+                            currentwaitingpool: `${pool.members} of 5`
+                        })
+                    })
+
+                })
+
         },
 
         displayFiat(_value) {
-            const formatted = numeral(_value * this.ticker / 10000000000).
+            const formatted = numeral(_value * this.ticker / 100000000).
                 format('$0,0[.]00[00]')
 
             return formatted
         },
 
         /**
-         * Toggle Tab
+         * Format BCH
          */
-        toggle(_tab) {
-            /* Reset tabs. */
-            this.tab = {
-                all: '',
-                shuffles: '',
-                fusions: '',
+        formatBCH: function (_satoshis) {
+            /* Set value. */
+            const value = (_satoshis / 100000000)
+
+            /* Return formatted value. */
+            return numeral(value).format('0,0.00[00]')
+        },
+
+        /**
+         * Format Price
+         */
+        formatPrice: function (_satoshis) {
+            /* Set value. */
+            const value = (_satoshis / 100000000) * this.ticker
+
+            /* Return formatted value. */
+            if (value < 1) {
+                return numeral(value).format('$0,0.00[00]')
+            } else {
+                return numeral(value).format('$0,0.00')
+            }
+        },
+
+        /**
+         * Update Price
+         */
+        async updatePrice() {
+            try {
+                /* Request current price. */
+                const current = await Nito.Markets.getTicker('BCH', 'USD')
+
+                /* Set current price. */
+                this.ticker = current
+            } catch (err) {
+                console.error(err)
+            }
+        },
+
+        initPools() {
+            /* Add 100 bits. */
+            this.pools.push({
+                id: '10000',
+                title: `100 Bits | ${this.displayFiat(10000)}`,
+                color: '#5E75C2',
+            })
+
+            /* Add 1,000 bits. */
+            this.pools.push({
+                id: '100000',
+                title: `1,000 Bits | ${this.displayFiat(100000)}`,
+                color: '#BB77C4',
+            })
+
+            /* Add 10K bits. */
+            this.pools.push({
+                id: '1000000',
+                title: `10K Bits | ${this.displayFiat(1000000)}`,
+                color: '#FD7EAC',
+            })
+
+            /* Add 0.1 BCH. */
+            this.pools.push({
+                id: '10000000',
+                title: `0.1 BCH | ${this.displayFiat(10000000)}`,
+                color: '#FF9987',
+            })
+
+            /* Add 1 BCH. */
+            this.pools.push({
+                id: '100000000',
+                title: `1 BCH | ${this.displayFiat(100000000)}`,
+                color: '#FFC66A',
+            })
+
+            /* Add 10 BCH. */
+            this.pools.push({
+                id: '1000000000',
+                title: `10 BCH | ${this.displayFiat(1000000000)}`,
+                color: '#F9F871',
+            })
+
+            /* Add 100 BCH. */
+            this.pools.push({
+                id: '10000000000',
+                title: `100 BCH | ${this.displayFiat(10000000000)}`,
+                color: '#C05864',
+            })
+
+            /* Add 1,000 BCH. */
+            this.pools.push({
+                id: '100000000000',
+                title: `1,000 BCH | ${this.displayFiat(100000000000)}`,
+                color: '#D2A517',
+            })
+
+            this.emailsSubscriptionChart = {
+                data: {
+                    labels: [ 'Ja', 'Fe', 'Ma', 'Ap', 'Mai', 'Ju' ],
+                    series: [
+                        [ 542, 443, 320, 780, 553, 453 ],
+                    ],
+                },
+                options: {
+                    axisX: {
+                        showGrid: false,
+                    },
+                    low: 0,
+                    high: 1000,
+                    chartPadding: {
+                        top: 0,
+                        right: 5,
+                        bottom: 0,
+                        left: 0,
+                    },
+                },
+                responsiveOptions: [
+                    ['screen and (max-width: 640px)', {
+                        seriesBarDistance: 5,
+                        axisX: {
+                            labelInterpolationFnc: function (value) {
+                                return value[0]
+                            },
+                        },
+                    }],
+                ],
             }
 
-            /* Set active tab. */
-            this.tab[_tab] = 'secondary'
-        },
+        }
+
     },
 
     created: async function () {
-        /* Set ticker. */
-        this.ticker = await this.getTicker('USD')
-        console.log('POOLS (usd):', this.ticker)
+        /* Load / set active pool. */
+        this.loadPool()
 
-        /* Add 100 bits. */
-        this.pools.push({
-            id: '10000',
-            title: `100 Bits | ${this.displayFiat(10000)}`,
-            color: '#5E75C2',
-        })
+        /* Update ticker price. */
+        await this.updatePrice()
 
-        /* Add 1,000 bits. */
-        this.pools.push({
-            id: '100000',
-            title: `1,000 Bits | ${this.displayFiat(100000)}`,
-            color: '#BB77C4',
-        })
-
-        /* Add 10K bits. */
-        this.pools.push({
-            id: '1000000',
-            title: `10K Bits | ${this.displayFiat(1000000)}`,
-            color: '#FD7EAC',
-        })
-
-        /* Add 0.1 BCH. */
-        this.pools.push({
-            id: '10000000',
-            title: `0.1 BCH | ${this.displayFiat(10000000)}`,
-            color: '#FF9987',
-        })
-
-        /* Add 1 BCH. */
-        this.pools.push({
-            id: '100000000',
-            title: `1 BCH | ${this.displayFiat(100000000)}`,
-            color: '#FFC66A',
-        })
-
-        /* Add 10 BCH. */
-        this.pools.push({
-            id: '1000000000',
-            title: `10 BCH | ${this.displayFiat(1000000000)}`,
-            color: '#F9F871',
-        })
-
-        /* Add 100 BCH. */
-        this.pools.push({
-            id: '10000000000',
-            title: `100 BCH | ${this.displayFiat(10000000000)}`,
-            color: '#C05864',
-        })
-
-        /* Add 1,000 BCH. */
-        this.pools.push({
-            id: '100000000000',
-            title: `1,000 BCH | ${this.displayFiat(100000000000)}`,
-            color: '#D2A517',
-        })
-
-        this.emailsSubscriptionChart = {
-            data: {
-                labels: [ 'Ja', 'Fe', 'Ma', 'Ap', 'Mai', 'Ju' ],
-                series: [
-                    [ 542, 443, 320, 780, 553, 453 ],
-                ],
-            },
-            options: {
-                axisX: {
-                    showGrid: false,
-                },
-                low: 0,
-                high: 1000,
-                chartPadding: {
-                    top: 0,
-                    right: 5,
-                    bottom: 0,
-                    left: 0,
-                },
-            },
-            responsiveOptions: [
-                ['screen and (max-width: 640px)', {
-                    seriesBarDistance: 5,
-                    axisX: {
-                        labelInterpolationFnc: function (value) {
-                            return value[0]
-                        },
-                    },
-                }],
-            ],
-        }
+        /* Initialize pools. */
+        this.initPools()
 
     },
 }

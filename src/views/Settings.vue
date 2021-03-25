@@ -183,6 +183,10 @@
                                     <v-btn color="success" class="mr-0">
                                         Update Profile
                                     </v-btn>
+
+                                    <v-btn color="secondary" class="mr-0 ml-3" @click="resetAllStats">
+                                        Reset All Stats
+                                    </v-btn>
                                 </v-col>
                             </v-row>
                         </v-container>
@@ -221,7 +225,7 @@
 <script>
 // Mixins
 import Proxyable from 'vuetify/lib/mixins/proxyable'
-import { mapMutations, mapState } from 'vuex'
+import { mapActions, mapMutations, mapState } from 'vuex'
 
 export default {
     mixins: [Proxyable],
@@ -272,9 +276,18 @@ export default {
     },
 
     methods: {
+        ...mapActions('cloud', [
+            'resetStats',
+        ]),
+
         ...mapMutations({
             setBarImage: 'SET_BAR_IMAGE',
         }),
+
+        resetAllStats() {
+            this.resetStats()
+            alert('All stats have been reset!')
+        },
     },
 }
 </script>

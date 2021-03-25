@@ -109,12 +109,12 @@ export default {
 
         getWeekStats(_weeksAgo) {
             /* Validate stats. */
-            if (!this.getStats || !this.getStats.shuffle) {
+            if (!this.getStats || !this.getStats.fusion) {
                 return null
             }
 
             /* Set data. */
-            const data = this.getStats.shuffle.activity
+            const data = this.getStats.fusion.activity
             // console.log('HISTORICAL DATA:', data)
 
             /* Validate data. */
@@ -197,7 +197,7 @@ export default {
             /**
              * Delay (Execution)
              */
-            // const _delay = (ms) => new Promise(resolve => setTimeout(resolve, ms))
+            const _delay = (ms) => new Promise(resolve => setTimeout(resolve, ms))
 
             /* Calculate this week's stats. */
             // this.valueChart.data.labels = this.getWeekStats(1).labels
@@ -228,7 +228,7 @@ export default {
                     this.volumeChart.options.high = high
                 }
 
-                // await _delay(250)
+                await _delay(250)
             }
 
             /* Validate chart series. */
@@ -256,7 +256,7 @@ export default {
                     this.valueChart.options.high = high
                 }
 
-                // await _delay(250)
+                await _delay(250)
             }
         },
 

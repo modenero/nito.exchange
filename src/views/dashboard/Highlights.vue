@@ -61,7 +61,6 @@ export default {
     },
     data() {
         return {
-            // nito: null,
             ticker: null,
         }
     },
@@ -94,9 +93,6 @@ export default {
 
     },
     created: function () {
-        /* Initialize Nito. */
-        // this.nito = new Nito()
-
         /* Update ticker. */
         this.updateTicker()
 
